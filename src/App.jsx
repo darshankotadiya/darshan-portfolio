@@ -3,7 +3,7 @@ import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import './App.css';
 
-// Project images
+// Project images (Make sure paths are correct)
 import socialImg from '../public/social-media.png';
 import workspaceImg from '../public/workspace.png';
 import dashboardImg from '../public/dashboard.png';
@@ -11,7 +11,6 @@ import ecommerceImg from '../public/ecommerce.png';
 import tictactoeImg from '../public/tictactoe.png';
 import chatAiImg from '../public/chat-ai.png';
 
-// Icons import(lucide-react )
 import {
   User,
   Code2,
@@ -20,7 +19,6 @@ import {
   Mail,
   Github,
   Linkedin,
-  Smartphone,
   MessageCircle,
   Send,
   ArrowUp,
@@ -58,58 +56,37 @@ function App() {
     });
   }, []);
 
-  // 2. MERN/API Logic for Contact Form
-  const handleSubmit = async (e) => {
+  // 2. WHATSAPP LOGIC (No Backend Required)
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    // --- Rate Limiting Logic ---
-    const COOLDOWN_PERIOD = 5 * 60 * 1000; // 5 Minutes
-    const lastSubmission = localStorage.getItem('lastContactSubmission');
-    const now = new Date().getTime();
-
-    if (lastSubmission && now - parseInt(lastSubmission) < COOLDOWN_PERIOD) {
-      const timeLeft = Math.ceil(
-        (COOLDOWN_PERIOD - (now - parseInt(lastSubmission))) / 1000 / 60,
-      );
-      alert(
-        `You are sending messages too frequently. Please wait ${timeLeft} more minute(s).`,
-      );
-      return;
-    }
-
-    // --- Loading State ---
-    const submitBtn = e.target.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = 'Sending...';
-    submitBtn.disabled = true;
 
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+    // 1. Extract Data
+    const { name, email, subject, message } = data;
 
-      const result = await response.json();
+    // 2. Format the Message for WhatsApp
+    // %0a creates a new line
+    const whatsappMessage =
+      `*New Portfolio Inquiry* %0a` +
+      `*Name:* ${name} %0a` +
+      `*Email:* ${email} %0a` +
+      `*Subject:* ${subject} %0a` +
+      `----------------------- %0a` +
+      `*Message:* %0a ${message}`;
 
-      if (result.success) {
-        alert('🚀 Success! Message sent to Darshan.');
-        e.target.reset();
-        localStorage.setItem('lastContactSubmission', now.toString());
-      } else {
-        alert('❌ Failed to send message. Please try again.');
-        console.error('Server Error:', result.error);
-      }
-    } catch (error) {
-      console.error('Network Error:', error);
-      alert('⚠️ Network error. Please check your connection.');
-    } finally {
-      submitBtn.innerHTML = originalText;
-      submitBtn.disabled = false;
-    }
+    // 3. Your Phone Number (Include Country Code, No + sign)
+    const phoneNumber = '919624332477';
+
+    // 4. Create the URL
+    const url = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+    // 5. Open WhatsApp in new tab
+    window.open(url, '_blank');
+
+    // Optional: Reset form after sending
+    e.target.reset();
   };
 
   const scrollToTop = () => {
@@ -814,7 +791,7 @@ function App() {
         </div>
       </section>
 
-      {/* CONTACT SECTION - Button Label Fixed */}
+      {/* CONTACT SECTION */}
       <section
         id='contact'
         style={{ padding: '100px 8%', background: '#0a0a0c' }}
@@ -942,7 +919,7 @@ function App() {
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Contact Form - CHANGED TO SEND ON WHATSAPP DIRECTLY */}
           <form className='form-container' onSubmit={handleSubmit}>
             <div style={{ display: 'flex', gap: '15px', marginBottom: '20px' }}>
               <div style={{ flex: 1 }}>
@@ -992,7 +969,7 @@ function App() {
               className='send-btn'
               style={{ border: 'none', width: '100%', cursor: 'pointer' }}
             >
-              <Send size={18} /> Send Message
+              <Send size={18} /> Send Message on WhatsApp
             </button>
           </form>
         </div>
