@@ -3,13 +3,13 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import './App.css';
 
-// Project images
-import socialImg from './assets/social-media.png';
-import workspaceImg from './assets/workspace.png';
-import dashboardImg from './assets/dashboard.png';
-import ecommerceImg from './assets/ecommerce.png';
-import tictactoeImg from './assets/tictactoe.png';
-import chatAiImg from './assets/chat-ai.png';
+// Change './assets/...' to './...' because your images are in the root folder
+import socialImg from './social-media.png';
+import workspaceImg from './workspace.png';
+import dashboardImg from './dashboard.png';
+import ecommerceImg from './ecommerce.png';
+import tictactoeImg from './tictactoe.png';
+import chatAiImg from './chat-ai.png';
 
 // Icons import(lucide-react )
 import { 
