@@ -3,13 +3,13 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import './App.css';
 
-// Change './assets/...' to './...' because your images are in the root folder
-import socialImg from './social-media.png';
-import workspaceImg from './workspace.png';
-import dashboardImg from './dashboard.png';
-import ecommerceImg from './ecommerce.png';
-import tictactoeImg from './tictactoe.png';
-import chatAiImg from './chat-ai.png';
+// Project images
+import socialImg from './assets/social-media.png';
+import workspaceImg from './assets/workspace.png';
+import dashboardImg from './assets/dashboard.png';
+import ecommerceImg from './assets/ecommerce.png';
+import tictactoeImg from './assets/tictactoe.png';
+import chatAiImg from './assets/chat-ai.png';
 
 // Icons import(lucide-react )
 import { 
@@ -214,13 +214,12 @@ function App() {
       </div>
 
     </div>
-  </section>
- {/* PROJECTS SECTION - 6 Projects with Fixed Image Paths */}
+  </section>{/* PROJECTS SECTION - ઈમેજ પાથ ફિક્સ સાથે */}
 <section id="projects" style={{padding: '100px 8%'}}>
   <h2 className="section-head">My <span>Projects</span></h2>
   <div className="projects-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginTop: '50px'}}>
     
-    {/* 1. LinkWave - Social Media App */}
+    {/* ૧. LinkWave - Social Media App */}
     <div className="proj-card">
       <img src={socialImg} alt="Social Media" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
       <div style={{padding:'25px'}}>
@@ -229,12 +228,12 @@ function App() {
           A MERN stack social platform with real-time posting, liking, and commenting features.
         </p>
         <div style={{marginTop: '25px'}}>
-          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/SocialMediaApp" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
+          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/SocialMediaApp" target="_blank" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
         </div>
       </div>
     </div>
 
-    {/* 2. Elite Master - Workspace */}
+    {/* ૨. Elite Master - Workspace */}
     <div className="proj-card">
       <img src={workspaceImg} alt="Workspace" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
       <div style={{padding:'25px'}}>
@@ -243,12 +242,12 @@ function App() {
           Real-time collaboration tool featuring screen sharing and instant messaging.
         </p>
         <div style={{marginTop: '25px'}}>
-          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task-4%20Real%20Communication%20App" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
+          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task-4%20Real%20Communication%20App" target="_blank" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
         </div>
       </div>
     </div>
 
-    {/* 3. ProManager - Dashboard */}
+    {/* ૩. ProManager - Dashboard */}
     <div className="proj-card">
       <img src={dashboardImg} alt="Dashboard" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
       <div style={{padding:'25px'}}>
@@ -257,12 +256,12 @@ function App() {
           An interactive project insight dashboard to track tasks and team productivity.
         </p>
         <div style={{marginTop: '25px'}}>
-          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task3-ProjectManagementTool" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
+          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task3-ProjectManagementTool" target="_blank" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
         </div>
       </div>
     </div>
 
-    {/* 4. CodeAlpha - E-commerce */}
+    {/* ૪. CodeAlpha - E-commerce */}
     <div className="proj-card">
       <img src={ecommerceImg} alt="E-commerce" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
       <div style={{padding:'25px'}}>
@@ -271,12 +270,12 @@ function App() {
           Full-featured e-commerce platform with inventory status and shopping cart.
         </p>
         <div style={{marginTop: '25px'}}>
-          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task1-Ecommerce" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
+          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task1-Ecommerce" target="_blank" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
         </div>
       </div>
     </div>
 
-    {/* 5. Nexus-AI - Tic Tac Toe */}
+    {/* ૫. Nexus-AI - Tic Tac Toe */}
     <div className="proj-card">
       <img src={tictactoeImg} alt="AI Game" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
       <div style={{padding:'25px'}}>
@@ -285,12 +284,12 @@ function App() {
           A smart game engine built with Minimax algorithm for unbeatable logic.
         </p>
         <div style={{marginTop: '25px'}}>
-          <a href="https://github.com/darshankotadiya/CODSOFT/tree/main/Task-2-TicTacToe-AI" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
+          <a href="https://github.com/darshankotadiya/CODSOFT/tree/main/Task-2-TicTacToe-AI" target="_blank" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
         </div>
       </div>
     </div>
 
-    {/* 6. Nexus-AI - Chat Assistant */}
+    {/* ૬. Nexus-AI - Chat Assistant */}
     <div className="proj-card">
       <img src={chatAiImg} alt="AI Chat" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
       <div style={{padding:'25px'}}>
@@ -299,7 +298,7 @@ function App() {
           A rule-based logic engine developed to respond to developer commands.
         </p>
         <div style={{marginTop: '25px'}}>
-          <a href="https://github.com/darshankotadiya/CODSOFT/tree/main/Task-1-Chatbot" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
+          <a href="https://github.com/darshankotadiya/CODSOFT/tree/main/Task-1-Chatbot" target="_blank" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
         </div>
       </div>
     </div>
