@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+html { scroll-behavior: smooth; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background-color: #0b111b; color: #f0f6fc; overflow-x: hidden; }
+
+/* Navbar - Right Aligned */
+.nav-container {
+  position: fixed; top: 25px; right: 50px; z-index: 1000;
+  background: rgba(22, 27, 34, 0.7); backdrop-filter: blur(15px);
+  padding: 10px 35px; border-radius: 40px; border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nav-container a { color: #94a3b8; text-decoration: none; font-size: 14px; margin-left: 25px; transition: 0.3s; }
+.nav-container a:hover { color: #8b5cf6; }
+
+/* Global Section Headers */
+section { padding: 100px 10%; min-height: 100vh; }
+.section-head { font-size: 45px; font-weight: 800; text-align: center; margin-bottom: 50px; }
+.section-head span { color: #8b5cf6; }
+/* ૧. Hero Section - હીરો સેક્શનને ટોપથી થોડું નીચે લેવા માટે */
+.hero-sec { 
+  min-height: 100vh;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  padding-top: 100px; /* આનાથી નેવબાર અને DK લોગો વચ્ચે સ્પેસ આવશે */
+  padding-bottom: 50px;
+}
+
+/* ૨. હીરો સેક્શનનો DK લોગો */
+.avatar-main { 
+  width: 140px; 
+  height: 140px; 
+  border-radius: 50%; 
+  border: 3px solid #3b82f6; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 50px; 
+  font-weight: 800; 
+  background: rgba(255, 255, 255, 0.03); 
+  margin-top: 40px; /* વધારાની જગ્યા માટે અહીં પણ માર્જિન આપ્યું છે */
+  margin-bottom: 25px; 
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.2); 
+}
+
+/* ૩. નેમ ટાઇટલ - Webkit એરર વગરનું પ્રોપર કોડ */
+.name-title { 
+  font-size: clamp(45px, 8vw, 90px); 
+  font-weight: 900; 
+  background: linear-gradient(90deg, #8b5cf6, #3b82f6); 
+  background-clip: text;
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+/* 2. About Section - 2 Column Layout */
+.about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
+.about-pill { background: rgba(139, 92, 246, 0.1); color: #a78bfa; padding: 8px 20px; border-radius: 30px; border: 1px solid rgba(139, 92, 246, 0.2); font-size: 14px; margin-right: 10px; margin-top: 15px; display: inline-block; }
+.about-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.info-card { background: #161b22; padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; position: relative; }
+.info-card:hover { transform: translateY(-10px); border-color: #8b5cf6; }
+.icon-box-about { background: #8b5cf6; width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: white; }
+
+/* 3. Skills - Progress Bars */
+.skills-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.skill-line-wrap { margin-bottom: 25px; }
+.skill-meta { display: flex; justify-content: space-between; font-size: 14px; color: #94a3b8; margin-bottom: 8px; }
+.progress-bg { background: #21262d; height: 8px; border-radius: 10px; overflow: hidden; }
+.progress-fill { background: linear-gradient(to right, #8b5cf6, #3b82f6); height: 100%; border-radius: 10px; box-shadow: 0 0 15px rgba(139, 92, 246, 0.5); }
+
+/* 4. Projects - Cards with Image placeholder */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+.proj-card { background: #161b22; border-radius: 25px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+.proj-card:hover { border-color: #8b5cf6; }
+.proj-img { height: 220px; background: #0d1117; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #30363d; font-size: 20px; }
+
+/* 5. Experience - Vertical Timeline */
+.exp-container { position: relative; padding-left: 50px; margin: 0 auto; max-width: 900px; }
+.timeline-line { position: absolute; left: 0; top: 0; width: 3px; height: 100%; background: linear-gradient(to bottom, #8b5cf6, #3b82f6); }
+.timeline-dot { position: absolute; left: -10px; top: 30px; width: 22px; height: 22px; background: #8b5cf6; border-radius: 50%; border: 4px solid #0b111b; }
+
+/* 6. Contact Section */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; }
+.contact-info-card { background: #161b22; padding: 25px; border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; gap: 20px; border: 1px solid rgba(255,255,255,0.05); }
+.input-field { width: 100%; background: #161b22; border: 1px solid #30363d; padding: 15px; border-radius: 12px; color: white; margin-bottom: 20px; outline: none; }
+.input-field:focus { border-color: #8b5cf6; }
+.send-btn { width: 100%; padding: 16px; background: linear-gradient(90deg, #8b5cf6, #3b82f6); border: none; border-radius: 12px; color: white; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
+/* Tech Stack Icons Wrapper */
+.tech-stack-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 40px 0 60px;
+}
+
+.tech-tag {
+  background: #161b22;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px 25px;
+  border-radius: 12px;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.tech-tag:hover {
+  border-color: #8b5cf6;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Progress Section Grid */
+.skills-main-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.skill-box {
+  background: #161b22;
+  padding: 40px 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skill-box h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 35px;
+  letter-spacing: 1px;
+}
+
+/* Line Progress Bar */
+.progress-item {
+  margin-bottom: 25px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.progress-track {
+  background: #21262d;
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
+/* Tech Stack Icons Wrapper */
+.tech-stack-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 40px 0 60px;
+}
+
+.tech-tag {
+  background: #161b22;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px 25px;
+  border-radius: 12px;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.tech-tag:hover {
+  border-color: #8b5cf6;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Progress Section Grid */
+.skills-main-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.skill-box {
+  background: #161b22;
+  padding: 40px 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skill-box h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 35px;
+  letter-spacing: 1px;
+}
+
+/* Line Progress Bar */
+.progress-item {
+  margin-bottom: 25px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.progress-track {
+  background: #21262d;
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+/* Footer Styles */
+.footer-main {
+  padding: 40px 10%;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0b111b;
+  position: relative;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.footer-logo-box {
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  color: white;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.footer-center {
+  color: #94a3b8;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.heart-icon {
+  color: #ef4444;
+}
+
+/* Scroll Top Button */
+.scroll-top-btn {
+  background: #161b22;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.scroll-top-btn:hover {
+  background: #8b5cf6;
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .footer-main { flex-direction: column; gap: 20px; text-align: center; }
+}
+/* --- Global Responsive Reset --- */
+@media (max-width: 1024px) {
+  section {
+    padding: 80px 5% !important; /* સાઈડની પેડિંગ ઓછી કરી જેથી લખાણ કપાય નહીં */
+    text-align: center;
+  }
+
+  /* નેવિગેશન બારને મોબાઈલમાં ટ્રાન્સપરન્ટ અને ફુલ વિડ્થ કરો (રાઉન્ડ કેપ્સ્યુલ હટાવો) */
+  .nav-container {
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+    padding: 10px 5% !important;
+    justify-content: space-between !important;
+    background: rgba(11, 17, 27, 0.9) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-links-desktop {
+    display: none; /* ડેસ્કટોપ લિંક્સ છુપાવો, હેમ્બર્ગ મેનુ બતાવો */
+  }
+
+  /* હીરો સેક્શનમાં લખાણ કપાય છે તે ફિક્સ કરો */
+  .name-title {
+    font-size: clamp(35px, 10vw, 55px) !important; /* ઓટો સાઈઝ એડજસ્ટમેન્ટ */
+    width: 100% !important;
+    white-space: normal !important;
+  }
+
+  .hero-desc {
+    max-width: 100% !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    padding: 0 10px;
+  }
+
+  /* ગ્રીડ લેઆઉટને સિંગલ કોલમ કરો */
+  .about-grid, .skills-main-grid, .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  .info-card, .skill-box {
+    width: 100% !important;
+  }
+}
+
+/* --- નાના મોબાઈલ માટે ખાસ ફિક્સ --- */
+@media (max-width: 480px) {
+  .avatar-main {
+    width: 110px !important;
+    height: 110px !important;
+  }
+  
+  .social-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* ગ્લોબલ ફૉન્ટ સાઈઝ વધારો */
+body {
+  font-size: 18px; 
+}
+
+.contact-info-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #111114;
+  padding: 18px 25px;
+  border-radius: 15px;
+  border: 1px solid #1c1c21;
+}
+
+.icon-box-purple {
+  background: #8b5cf6;
+  padding: 14px;
+  border-radius: 12px;
+  display: flex;
+}
+
+.label { color: #94a3b8; font-size: 14px; margin-bottom: 2px; }
+.value { color: white; font-weight: 600; font-size: 17px; margin: 0; }
+
+.form-container {
+  background: #111114;
+  padding: 45px;
+  border-radius: 25px;
+  border: 1px solid #1c1c21;
+}
+
+.form-container label {
+  display: block;
+  color: #f0f6fc;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.input-field {
+  width: 100%;
+  background: #0a0a0c !important;
+  border: 1px solid #1c1c21 !important;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.send-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+  color: white !important;
+  padding: 18px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.send-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+}
+/* ૧. નેવિગેશન બાર કન્ટેનર */
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* નામ ડાબે અને મેનુ જમણે રાખવા માટે */
+  align-items: center;
+  padding: 15px 8%;
+  background: rgba(7, 7, 9, 0.85); /* ટ્રાન્સપરન્ટ લૂક */
+  backdrop-filter: blur(12px); /* બ્લર ઇફેક્ટ */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 2000 !important; /* આનાથી ક્લિક કામ કરવા માંડશે */
+}
+
+/* ૨. ડાબી બાજુનું લોગો અને નામ */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo {
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6); /* પર્પલ-બ્લુ ગ્રેડિયન્ટ */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.nav-name {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ૩. જમણી બાજુનું મેનુ */
+.nav-right {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-right a {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* આઈકોન અને લખાણ વચ્ચેની જગ્યા */
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* ૪. હોવર ઇફેક્ટ */
+.nav-right a:hover {
+  color: #8b5cf6;
+  transform: translateY(-2px);
+}
+
+/* મોબાઈલ માટે રિસ્પોન્સિવ સેટિંગ્સ */
+@media (max-width: 900px) {
+  .nav-name {
+    display: none; /* નાના મોબાઈલમાં માત્ર DK લોગો દેખાશે */
+  }
+  .nav-right {
+    gap: 15px;
+  }
+  .nav-right a span {
+    display: none; /* મોબાઈલમાં માત્ર આઈકોન્સ દેખાશે */
+  }
+}
+:root {
+  /* પાર્થ સાટાની મેચિંગ થીમ કલર્સ */
+  --bg-dark: #070709;        /* મુખ્ય ડાર્ક બેકગ્રાઉન્ડ */
+  --nav-bg: rgba(7, 7, 9, 0.85); /* નેવબાર માટે ટ્રાન્સપરન્ટ લુક */
+  --primary-purple: #8b5cf6;  /* લાઈટ પર્પલ (Icons & Tags) */
+  --primary-blue: #3b82f6;    /* લાઈટ બ્લુ (Gradient લોગો માટે) */
+  --text-main: #f0f6fc;      /* મુખ્ય સફેદ લખાણ */
+  --text-dim: #94a3b8;       /* ઝાંખું લખાણ (Descriptions માટે) */
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* પાર્થ જેવો આધુનિક ફોન્ટ */
+}
+
+/* નેવબારની સ્ટાઈલ પાર્થ સ્ટાઈલ મુજબ */
+.nav-container {
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* લોગો ગ્રેડિયન્ટ (DK લોગો માટે) */
+.nav-logo {
+  background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
