@@ -3,13 +3,14 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import './App.css';
 
-// App.jsx ની ટોપ લાઈન્સ
+// Project images
 import socialImg from './assets/social-media.png';
 import workspaceImg from './assets/workspace.png';
 import dashboardImg from './assets/dashboard.png';
 import ecommerceImg from './assets/ecommerce.png';
 import tictactoeImg from './assets/tictactoe.png';
 import chatAiImg from './assets/chat-ai.png';
+
 // Icons import(lucide-react )
 import {
   User, Code2, FolderOpen, Briefcase, Mail, Github, Linkedin,
@@ -40,18 +41,56 @@ function App() {
     });
   }, []);
 
-  // 2. WhatsAp logic for Contact Form
-  const handleSubmit = (e) => {
+  // 2. MERN Logic for Contact Form - (વોટ્સએપ કાઢીને ઈમેઈલ બેકએન્ડ સેટ કર્યું)
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
 
-    // Whtsaoop URL with pre-filled message
-    const whatsappUrl = `https://wa.me/919624332477?text=Hello Darshan,%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
-    window.open(whatsappUrl, '_blank');
+    // --- ૧. Rate Limiting Logic (પાર્થ ના કોડ માંથી) ---
+    const COOLDOWN_PERIOD = 5 * 60 * 1000; // 5 મિનિટ
+    const lastSubmission = localStorage.getItem('lastContactSubmission');
+    const now = new Date().getTime();
+
+    if (lastSubmission && (now - parseInt(lastSubmission)) < COOLDOWN_PERIOD) {
+      const timeLeft = Math.ceil((COOLDOWN_PERIOD - (now - parseInt(lastSubmission))) / 1000 / 60);
+      alert(`You are sending messages too frequently. Please wait ${timeLeft} more minute(s).`);
+      return; // અહીંથી કોડ અટકી જશે
+    }
+
+    // --- ૨. Loading State (બટન ને 'Sending...' કરવા માટે) ---
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = "Sending...";
+    submitBtn.disabled = true;
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      // આ તારી Vercel API ને મેસેજ મોકલશે
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("🚀 Success! Message sent to Darshan's Email.");
+        e.target.reset();
+        // સફળ સબમિશન પછી ટાઈમ સેવ કરો
+        localStorage.setItem('lastContactSubmission', now.toString());
+      } else {
+        alert("❌ Failed: Check your App Password.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("⚠️ Server error. Please try again later.");
+    } finally {
+      // બટન ને પાછું નોર્મલ કરવું
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }
   };
 
   const scrollToTop = () => {
@@ -66,9 +105,10 @@ function App() {
           id="tsparticles"
           options={{
             background: { color: { value: "transparent" } },
+            fullScreen: { enable: true, zIndex: -1 },
             fpsLimit: 120,
             particles: {
-              color: { value: "#8b5cf6" }, // purple color
+              color: { value: "#8b5cf6" },
               links: { color: "#8b5cf6", distance: 150, enable: true, opacity: 0.2, width: 1 },
               move: { enable: true, speed: 1.5, direction: "none" },
               number: { density: { enable: true, area: 800 }, value: 60 },
@@ -81,14 +121,14 @@ function App() {
           }}
         />
       )}
-      {/* 4. NAVBAR - Parth Style ) */}
+
+      {/* 4. NAVBAR */}
       <nav className="nav-container">
         <div className="nav-left">
           <div className="nav-logo">DK</div>
           <span className="nav-name">Darshan Kotadiya</span>
         </div>
 
-        {/* Desktop Nav */}
         <div className="nav-right desktop-nav">
           <a href="#about"><User size={18} /> About</a>
           <a href="#skills"><Code2 size={18} /> Skills</a>
@@ -97,12 +137,10 @@ function App() {
           <a href="#contact"><Mail size={18} /> Contact</a>
         </div>
 
-        {/* Mobile Menu Button */}
         <div className="mobile-menu-btn" onClick={toggleMenu}>
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </div>
 
-        {/* Mobile Nav Overlay */}
         <div className={`mobile-nav-overlay ${isOpen ? 'active' : ''}`}>
           <a href="#about" onClick={closeMenu}><User size={20} /> About</a>
           <a href="#skills" onClick={closeMenu}><Code2 size={20} /> Skills</a>
@@ -123,31 +161,28 @@ function App() {
         </p>
 
         <div style={{ display: 'flex', gap: '30px', marginTop: '30px' }}>
-          {/* GITHUB LINK */}
-          <a href="https://github.com/darshankotadiya" target="_blank" rel="noopener noreferrer" className="icon-box-about" style={{ textDecoration: 'none' }}>
+          <a href="https://github.com/darshankotadiya" target="_blank" rel="noopener noreferrer" className="icon-box-about">
             <Github size={24} />
           </a>
 
-          {/* LINKEDIN LINK */}
-          <a href="https://www.linkedin.com/in/darshan-kotadiya-70416a251/" target="_blank" rel="noopener noreferrer" className="icon-box-about" style={{ textDecoration: 'none' }}>
+          <a href="https://www.linkedin.com/in/darshan-kotadiya-70416a251/" target="_blank" rel="noopener noreferrer" className="icon-box-about">
             <Linkedin size={24} />
           </a>
 
-          {/* MAIL LINK */}
           <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=darshankotadiya1010@gmail.com&su=Portfolio%20Contact&body=Hi%20Darshan,%0A%0AI%20saw%20your%20portfolio."
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:darshankotadiya1010@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Darshan,"
             className="icon-box-about"
-            style={{ textDecoration: 'none' }}
           >
             <Mail size={24} />
           </a>
         </div>
 
-        <button style={{ marginTop: '50px', background: 'linear-gradient(90deg, #8b5cf6, #3b82f6)', color: 'white', border: 'none', padding: '15px 40px', borderRadius: '40px', fontWeight: '800', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}>
-          Explore My Work <ChevronDown size={20} />
-        </button>
+        {/* EXPLORE MY WORK BUTTON - ક્લિક કરવાથી About Me સેક્શન પર જશે */}
+        <a href="#about" style={{ textDecoration: 'none' }}>
+          <button className="explore-btn">
+            Explore My Work <ChevronDown size={20} className="bounce-icon" />
+          </button>
+        </a>
       </section>
 
       {/* 2. ABOUT ME - 2 COLUMN LAYOUT */}
@@ -247,85 +282,97 @@ function App() {
 
         </div>
       </section>
-   {/* PROJECTS SECTION - Fixed for Vercel deployment */}
-<section id="projects" style={{ padding: '100px 8%' }}>
-  <h2 className="section-head">My <span>Projects</span></h2>
-  <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginTop: '50px' }}>
+      <section id="projects" style={{ padding: '100px 8%' }}>
+        <h2 className="section-head">My <span>Projects</span></h2>
+        <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginTop: '50px' }}>
 
-    {/* 1. LinkWave - Using {socialImg} variable */}
-    <div className="proj-card">
-      <img src={socialImg} alt="Social Media" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
-      <div style={{ padding: '25px' }}>
-        <h4 style={{ fontSize: '22px', fontWeight: '700' }}>LinkWave Social</h4>
-        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>A MERN stack social platform with real-time features.</p>
-        <div style={{ marginTop: '25px' }}>
-          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/SocialMediaApp" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
+          {/* 1. LinkWave - Social Media App */}
+          <div className="proj-card">
+            <img src="./src/assets/social-media.png" alt="Social Media" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+            <div style={{ padding: '25px' }}>
+              <h4 style={{ fontSize: '22px', fontWeight: '700' }}>LinkWave Social</h4>
+              <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>
+                A MERN stack social platform with real-time posting, liking, and commenting features.
+              </p>
+              <div style={{ marginTop: '25px' }}>
+                <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/SocialMediaApp" target="_blank" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
+              </div>
+            </div>
+          </div>
+
+          {/* 2. Elite Master - Workspace */}
+          <div className="proj-card">
+            <img src="./src/assets/workspace.png" alt="Workspace" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+            <div style={{ padding: '25px' }}>
+              <h4 style={{ fontSize: '22px', fontWeight: '700' }}>Elite Master Workspace</h4>
+              <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>
+                Real-time collaboration tool featuring screen sharing and instant messaging.
+              </p>
+              <div style={{ marginTop: '25px' }}>
+                <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task-4%20Real%20Communication%20App" target="_blank" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. ProManager - Dashboard */}
+          <div className="proj-card">
+            <img src="./src/assets/dashboard.png" alt="Dashboard" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+            <div style={{ padding: '25px' }}>
+              <h4 style={{ fontSize: '22px', fontWeight: '700' }}>ProManager Dashboard</h4>
+              <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>
+                An interactive project insight dashboard to track tasks and team productivity.
+              </p>
+              <div style={{ marginTop: '25px' }}>
+                <a href="https://github.com/https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task3-ProjectManagementTool" target="_blank" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
+              </div>
+            </div>
+          </div>
+
+          {/* 4. CodeAlpha - E-commerce */}
+          <div className="proj-card">
+            <img src="./src/assets/ecommerce.png" alt="E-commerce" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+            <div style={{ padding: '25px' }}>
+              <h4 style={{ fontSize: '22px', fontWeight: '700' }}>CodeAlpha Store</h4>
+              <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>
+                Full-featured e-commerce platform with inventory status and shopping cart.
+              </p>
+              <div style={{ marginTop: '25px' }}>
+                <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task1-Ecommerce" target="_blank" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
+              </div>
+            </div>
+          </div>
+
+          {/* 5. Nexus-AI - Tic Tac Toe */}
+          <div className="proj-card">
+            <img src="./src/assets/tictactoe.png" alt="AI Game" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+            <div style={{ padding: '25px' }}>
+              <h4 style={{ fontSize: '22px', fontWeight: '700' }}>Nexus-AI Tic-Tac-Toe</h4>
+              <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>
+                A smart game engine built with Minimax algorithm for unbeatable logic.
+              </p>
+              <div style={{ marginTop: '25px' }}>
+                <a href="https://github.com/darshankotadiya/CODSOFT/tree/main/Task-2-TicTacToe-AI" target="_blank" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
+              </div>
+            </div>
+          </div>
+
+          {/* 6. Nexus-AI - Chat Assistant */}
+          <div className="proj-card">
+            <img src="./src/assets/chat-ai.png" alt="AI Chat" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+            <div style={{ padding: '25px' }}>
+              <h4 style={{ fontSize: '22px', fontWeight: '700' }}>Nexus-AI Assistant</h4>
+              <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>
+                A rule-based logic engine developed to respond to developer commands.
+              </p>
+              <div style={{ marginTop: '25px' }}>
+                <a href="https://github.com/darshankotadiya/CODSOFT/tree/main/Task-1-Chatbot" target="_blank" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
+              </div>
+            </div>
+          </div>
+
         </div>
-      </div>
-    </div>
+      </section>
 
-    {/* 2. Elite Master - Using {workspaceImg} variable */}
-    <div className="proj-card">
-      <img src={workspaceImg} alt="Workspace" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
-      <div style={{ padding: '25px' }}>
-        <h4 style={{ fontSize: '22px', fontWeight: '700' }}>Elite Master Workspace</h4>
-        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>Real-time collaboration tool featuring screen sharing.</p>
-        <div style={{ marginTop: '25px' }}>
-          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task-4%20Real%20Communication%20App" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
-        </div>
-      </div>
-    </div>
-
-    {/* 3. ProManager - Using {dashboardImg} variable */}
-    <div className="proj-card">
-      <img src={dashboardImg} alt="Dashboard" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
-      <div style={{ padding: '25px' }}>
-        <h4 style={{ fontSize: '22px', fontWeight: '700' }}>ProManager Dashboard</h4>
-        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>An interactive project insight dashboard.</p>
-        <div style={{ marginTop: '25px' }}>
-          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task3-ProjectManagementTool" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
-        </div>
-      </div>
-    </div>
-
-    {/* 4. CodeAlpha - Using {ecommerceImg} variable */}
-    <div className="proj-card">
-      <img src={ecommerceImg} alt="E-commerce" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
-      <div style={{ padding: '25px' }}>
-        <h4 style={{ fontSize: '22px', fontWeight: '700' }}>CodeAlpha Store</h4>
-        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>Full-featured e-commerce platform with inventory status.</p>
-        <div style={{ marginTop: '25px' }}>
-          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task1-Ecommerce" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
-        </div>
-      </div>
-    </div>
-
-    {/* 5. Nexus-AI - Using {tictactoeImg} variable */}
-    <div className="proj-card">
-      <img src={tictactoeImg} alt="AI Game" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
-      <div style={{ padding: '25px' }}>
-        <h4 style={{ fontSize: '22px', fontWeight: '700' }}>Nexus-AI Tic-Tac-Toe</h4>
-        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>Smart game engine built with Minimax algorithm.</p>
-        <div style={{ marginTop: '25px' }}>
-          <a href="https://github.com/darshankotadiya/CODSOFT/tree/main/Task-2-TicTacToe-AI" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
-        </div>
-      </div>
-    </div>
-
-    {/* 6. Nexus-AI Assistant - Using {chatAiImg} variable */}
-    <div className="proj-card">
-      <img src={chatAiImg} alt="AI Chat" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
-      <div style={{ padding: '25px' }}>
-        <h4 style={{ fontSize: '22px', fontWeight: '700' }}>Nexus-AI Assistant</h4>
-        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>Rule-based logic engine for assistant commands.</p>
-        <div style={{ marginTop: '25px' }}>
-          <a href="https://github.com/darshankotadiya/CODSOFT/tree/main/Task-1-Chatbot" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
       {/* 5. PROFESSIONAL EXPERIENCE - STRATEGICALLY ORDERED */}
       <section id="experience" style={{ padding: '100px 8%' }}>
         <h2 className="section-head">Professional <span>Experience</span></h2>
@@ -386,17 +433,26 @@ function App() {
             <div className="contact-info-list" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
               <div className="contact-info-card">
                 <div className="icon-box-purple"><Mail size={35} color="white" /></div>
-                <div><p className="label">Email</p><p className="value">darshankotadiya1010@gmail.com</p></div>
+                <div>
+                  <p className="label">Email</p>
+                  <a href="mailto:darshankotadiya1010@gmail.com" className="value" style={{ textDecoration: 'none', display: 'block' }}>darshankotadiya1010@gmail.com</a>
+                </div>
               </div>
 
               <div className="contact-info-card">
                 <div className="icon-box-purple"><PhoneCall size={35} color="white" /></div>
-                <div><p className="label">Phone</p><p className="value">+91 96243 32477</p></div>
+                <div>
+                  <p className="label">Phone</p>
+                  <a href="tel:+919624332477" className="value" style={{ textDecoration: 'none', display: 'block' }}>+91 96243 32477</a>
+                </div>
               </div>
 
               <div className="contact-info-card">
                 <div className="icon-box-purple"><MessageSquare size={35} color="white" /></div>
-                <div><p className="label">WhatsApp</p><p className="value">+91 96243 32477</p></div>
+                <div>
+                  <p className="label">WhatsApp</p>
+                  <a href="https://wa.me/919624332477" target="_blank" rel="noopener noreferrer" className="value" style={{ textDecoration: 'none', display: 'block' }}>+91 96243 32477</a>
+                </div>
               </div>
             </div>
 
@@ -420,14 +476,13 @@ function App() {
                   <MessageCircle size={22} />
                 </a>
 
-                {/* MAIL */}
+                {/* FIXED MAIL LINK - મોબાઈલ અને લેપટોપ બંને માટે */}
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=darshankotadiya1010@gmail.com&su=Portfolio%20Contact&body=Hi%20Darshan,%0A%0AI%20saw%20your%20portfolio."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-social-icon"
+                  href="mailto:darshankotadiya1010@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Darshan,%0A%0AI%20saw%20your%20portfolio..."
+                  className="icon-box-about"
+                  style={{ textDecoration: 'none' }}
                 >
-                  <Mail size={22} />
+                  <Mail size={24} />
                 </a>
 
               </div>
