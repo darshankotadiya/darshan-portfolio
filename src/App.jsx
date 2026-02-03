@@ -247,47 +247,48 @@ function App() {
         </div>
       </section>
     {/* PROJECTS SECTION - 6 Projects with Fixed Variable Names */}
+{/* PROJECTS SECTION - Fixed for live images */}
 <section id="projects" style={{ padding: '100px 8%' }}>
   <h2 className="section-head">My <span>Projects</span></h2>
   <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginTop: '50px' }}>
 
-    {/* 1. LinkWave */}
+    {/* 1. LinkWave - Use {socialImg} variable */}
     <div className="proj-card">
       <img src={socialImg} alt="Social Media" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
       <div style={{ padding: '25px' }}>
         <h4 style={{ fontSize: '22px', fontWeight: '700' }}>LinkWave Social</h4>
-        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>A MERN stack social platform.</p>
+        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>A MERN stack social platform with real-time features.</p>
         <div style={{ marginTop: '25px' }}>
           <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/SocialMediaApp" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
         </div>
       </div>
     </div>
 
-    {/* 2. Elite Master */}
+    {/* 2. Elite Master - Use {workspaceImg} variable */}
     <div className="proj-card">
       <img src={workspaceImg} alt="Workspace" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
       <div style={{ padding: '25px' }}>
-        <h4 style={{ fontSize: '22px', fontWeight: '700' }}>Elite Master</h4>
-        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>Real-time collaboration tool.</p>
+        <h4 style={{ fontSize: '22px', fontWeight: '700' }}>Elite Master Workspace</h4>
+        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>Real-time collaboration tool featuring screen sharing.</p>
         <div style={{ marginTop: '25px' }}>
           <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task-4%20Real%20Communication%20App" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
         </div>
       </div>
     </div>
 
-    {/* 3. ProManager */}
+    {/* 3. ProManager - Use {dashboardImg} variable */}
     <div className="proj-card">
       <img src={dashboardImg} alt="Dashboard" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
       <div style={{ padding: '25px' }}>
         <h4 style={{ fontSize: '22px', fontWeight: '700' }}>ProManager Dashboard</h4>
-        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>Interactive project insight dashboard.</p>
+        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>An interactive project insight dashboard.</p>
         <div style={{ marginTop: '25px' }}>
           <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task3-ProjectManagementTool" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
         </div>
       </div>
     </div>
 
-    {/* 4. CodeAlpha Store */}
+    {/* 4. CodeAlpha - Use {ecommerceImg} variable */}
     <div className="proj-card">
       <img src={ecommerceImg} alt="E-commerce" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
       <div style={{ padding: '25px' }}>
@@ -299,24 +300,24 @@ function App() {
       </div>
     </div>
 
-    {/* 5. Nexus-AI Tic Tac Toe */}
+    {/* 5. Nexus-AI - Use {tictactoeImg} variable */}
     <div className="proj-card">
       <img src={tictactoeImg} alt="AI Game" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
       <div style={{ padding: '25px' }}>
         <h4 style={{ fontSize: '22px', fontWeight: '700' }}>Nexus-AI Tic-Tac-Toe</h4>
-        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>Minimax algorithm game engine.</p>
+        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>A smart game engine built with Minimax algorithm.</p>
         <div style={{ marginTop: '25px' }}>
           <a href="https://github.com/darshankotadiya/CODSOFT/tree/main/Task-2-TicTacToe-AI" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
         </div>
       </div>
     </div>
 
-    {/* 6. Nexus-AI Assistant */}
+    {/* 6. Nexus-AI Assistant - Use {chatAiImg} variable */}
     <div className="proj-card">
       <img src={chatAiImg} alt="AI Chat" className="proj-img" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
       <div style={{ padding: '25px' }}>
         <h4 style={{ fontSize: '22px', fontWeight: '700' }}>Nexus-AI Assistant</h4>
-        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>Rule-based logic chat engine.</p>
+        <p style={{ color: '#94a3b8', fontSize: '15px', marginTop: '10px', lineHeight: '1.6' }}>A rule-based logic engine for assistant commands.</p>
         <div style={{ marginTop: '25px' }}>
           <a href="https://github.com/darshankotadiya/CODSOFT/tree/main/Task-1-Chatbot" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{ textDecoration: 'none' }}>Source Code</a>
         </div>
