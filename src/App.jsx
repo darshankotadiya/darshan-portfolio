@@ -434,7 +434,12 @@ function App() {
                 </a>
 
                 {/* MAIL */}
-                <a href="mailto:darshankotadiya1010@gmail.com" className="footer-social-icon">
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=darshankotadiya1010@gmail.com&su=Portfolio%20Contact&body=Hi%20Darshan,%0A%0AI%20saw%20your%20portfolio."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-social-icon"
+                >
                   <Mail size={22} />
                 </a>
 
