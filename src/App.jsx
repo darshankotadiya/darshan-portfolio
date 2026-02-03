@@ -3,7 +3,6 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import './App.css';
 
-// REPLACE LINES 7-12 WITH THESE
 import socialImg from './social-media.png';
 import workspaceImg from './workspace.png';
 import dashboardImg from './dashboard.png';
