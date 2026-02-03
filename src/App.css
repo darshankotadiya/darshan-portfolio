@@ -497,98 +497,60 @@ body {
   transform: translateY(-2px);
 }
 
-/* મોબાઈલ માટે રિસ્પોન્સિવ સેટિંગ્સ */
-@media (max-width: 900px) {
-  .nav-name {
-    display: none; /* નાના મોબાઈલમાં માત્ર DK લોગો દેખાશે */
-  }
-  .nav-right {
-    gap: 15px;
-  }
-  .nav-right a span {
-    display: none; /* મોબાઈલમાં માત્ર આઈકોન્સ દેખાશે */
-  }
-}
-:root {
-  /* પાર્થ સાટાની મેચિંગ થીમ કલર્સ */
-  --bg-dark: #070709;        /* મુખ્ય ડાર્ક બેકગ્રાઉન્ડ */
-  --nav-bg: rgba(7, 7, 9, 0.85); /* નેવબાર માટે ટ્રાન્સપરન્ટ લુક */
-  --primary-purple: #8b5cf6;  /* લાઈટ પર્પલ (Icons & Tags) */
-  --primary-blue: #3b82f6;    /* લાઈટ બ્લુ (Gradient લોગો માટે) */
-  --text-main: #f0f6fc;      /* મુખ્ય સફેદ લખાણ */
-  --text-dim: #94a3b8;       /* ઝાંખું લખાણ (Descriptions માટે) */
-}
-
-body {
-  background-color: var(--bg-dark);
-  color: var(--text-main);
-  margin: 0;
-  font-family: 'Inter', sans-serif; /* પાર્થ જેવો આધુનિક ફોન્ટ */
-}
-
-/* નેવબારની સ્ટાઈલ પાર્થ સ્ટાઈલ મુજબ */
-.nav-container {
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* લોગો ગ્રેડિયન્ટ (DK લોગો માટે) */
-.nav-logo {
-  background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
-}
-
-/* MOBILE RESPONSIVE STYLES */
+/* ૧. મોબાઈલ રિસ્પોન્સિવ ફિક્સ - 768px થી નાની સ્ક્રીન માટે */
 @media (max-width: 768px) {
-  /* Navbar adjustments */
-  .nav-name {
-    display: none; /* Hide name to save space on mobile */
-  }
   
+  /* નેવબારને નાનું કરો અને નામ છુપાવો */
+  .nav-container {
+    padding: 10px 5% !important;
+    justify-content: center !important; /* લોગો અને મેનુને સેન્ટર કરવા માટે */
+  }
+
+  .nav-name {
+    display: none !important; /* મોબાઈલમાં "Darshan Kotadiya" નામ છુપાવો */
+  }
+
   .nav-right {
-    gap: 15px;
+    gap: 15px !important;
   }
 
   .nav-right a span {
-    display: none; /* Show icons only */
+    display: none !important; /* મોબાઈલમાં માત્ર આઈકોન્સ બતાવો */
   }
 
-  /* Hero Section scaling */
+  /* હીરો સેક્શનમાં લખાણની સાઈઝ ઘટાડો */
   .name-title {
-    font-size: 42px !important; /* Prevent text overflow */
+    font-size: 36px !important; /* નામની સાઈઝ નાની કરી */
+    line-height: 1.2 !important;
   }
 
-  .hero-sec {
-    padding-top: 120px;
+  .avatar-main {
+    width: 100px !important; /* લોગોની સાઈઝ નાની કરી */
+    height: 100px !important;
+    font-size: 35px !important;
+    margin-top: 100px !important; /* નેવબારથી નીચે લેવા માટે */
   }
 
-  /* Force single column layout for grids */
-  .projects-grid, 
-  .skills-main-grid, 
-  .about-grid {
+  .hero-sec p {
+    font-size: 14px !important;
+    padding: 0 15px !important;
+  }
+
+  /* પ્રોજેક્ટ ગ્રીડને ૧ કોલમ કરો */
+  .projects-grid {
     grid-template-columns: 1fr !important;
-    padding: 0 5%;
-  }
-
-  .about-cards-grid {
-    grid-template-columns: 1fr 1fr !important;
-  }
-
-  /* Contact Form adjustment */
-  .form-container div {
-    flex-direction: column;
+    gap: 20px !important;
+    padding: 0 5% !important;
   }
 }
 
+/* ૨. અતિશય નાની સ્ક્રીન (480px) માટે */
 @media (max-width: 480px) {
-  .about-cards-grid {
-    grid-template-columns: 1fr !important;
+  .name-title {
+    font-size: 30px !important;
   }
   
-  .avatar-main {
-    width: 110px;
-    height: 110px;
-    font-size: 40px;
+  .nav-right {
+    gap: 10px !important;
   }
-}
+}  
