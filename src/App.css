@@ -497,67 +497,53 @@ body {
   transform: translateY(-2px);
 }
 
-/* COMPLETE MOBILE OVERHAUL */
-@media (max-width: 768px) {
+/* FORCED MOBILE RESPONSIVENESS */
+@media screen and (max-width: 768px) {
   
-  /* 1. Navbar Fix - Prevents overlapping and saves space */
+  /* 1. Navbar: Shrink and move to top */
   .nav-container {
-    padding: 10px 20px !important;
-    height: auto !important;
-    flex-wrap: wrap !important; /* Allows items to move to next line if needed */
+    padding: 10px !important;
+    height: 60px !important;
+    justify-content: space-around !important;
   }
+  .nav-name { display: none !important; } /* Hides "Darshan Kotadiya" in nav */
+  .nav-right { gap: 10px !important; }
+  .nav-right a span { display: none !important; } /* Icons only */
 
-  .nav-name {
-    display: none !important; /* Hides large name on mobile */
-  }
-
-  .nav-right {
-    gap: 12px !important;
-    justify-content: center !important;
-    width: 100% !important;
-    margin-top: 5px !important;
-  }
-
-  .nav-right a span {
-    display: none !important; /* Shows ONLY icons to keep navbar thin */
-  }
-
-  /* 2. Hero Section Fix - Adds space below Navbar */
+  /* 2. Hero: Push everything down away from Nav */
   .hero-sec {
-    padding-top: 140px !important; /* Pushes content down so Navbar doesn't cover it */
-    padding-bottom: 60px !important;
-    min-height: auto !important;
+    padding-top: 160px !important; /* Forces content below Navbar */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-height: 100vh !important;
   }
 
+  /* 3. Avatar & Title: Shrink for small screens */
   .avatar-main {
-    width: 90px !important;
-    height: 90px !important;
-    font-size: 30px !important;
-    margin-bottom: 20px !important;
+    width: 80px !important;
+    height: 80px !important;
+    font-size: 25px !important;
+    margin-bottom: 15px !important;
+    margin-top: 0 !important;
   }
 
   .name-title {
-    font-size: 32px !important; /* Shrunk specifically for mobile */
-    line-height: 1.1 !important;
-    display: block !important;
-    width: 100% !important;
+    font-size: 28px !important; /* Much smaller to fit screen */
+    width: 90% !important;
+    margin: 0 auto !important;
+    line-height: 1.2 !important;
   }
 
   .hero-sec p {
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-    padding: 0 10px !important;
+    font-size: 13px !important;
+    width: 85% !important;
+    margin-top: 10px !important;
   }
 
-  /* 3. Social & Button scaling */
-  .social-links {
-    gap: 15px !important;
-    margin-top: 20px !important;
-  }
-
-  .explore-btn {
-    padding: 12px 25px !important;
-    font-size: 14px !important;
-    margin-top: 30px !important;
+  /* 4. Project Cards: Single column */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    padding: 0 20px !important;
   }
 }
