@@ -17,7 +17,7 @@ body { background-color: #0b111b; color: #f0f6fc; overflow-x: hidden; }
 section { padding: 100px 10%; min-height: 100vh; }
 .section-head { font-size: 45px; font-weight: 800; text-align: center; margin-bottom: 50px; }
 .section-head span { color: #8b5cf6; }
-/* ૧. Hero Section - હીરો સેક્શનને ટોપથી થોડું નીચે લેવા માટે */
+/* ૧. Hero Section -  */
 .hero-sec { 
   min-height: 100vh;
   display: flex; 
@@ -25,11 +25,11 @@ section { padding: 100px 10%; min-height: 100vh; }
   justify-content: center; 
   align-items: center; 
   text-align: center; 
-  padding-top: 100px; /* આનાથી નેવબાર અને DK લોગો વચ્ચે સ્પેસ આવશે */
+  padding-top: 100px; /* DK Space */
   padding-bottom: 50px;
 }
 
-/* ૨. હીરો સેક્શનનો DK લોગો */
+/*2- DK LOgo */
 .avatar-main { 
   width: 140px; 
   height: 140px; 
@@ -41,12 +41,12 @@ section { padding: 100px 10%; min-height: 100vh; }
   font-size: 50px; 
   font-weight: 800; 
   background: rgba(255, 255, 255, 0.03); 
-  margin-top: 40px; /* વધારાની જગ્યા માટે અહીં પણ માર્જિન આપ્યું છે */
+  margin-top: 40px; /* More spaace margin */
   margin-bottom: 25px; 
   box-shadow: 0 0 40px rgba(59, 130, 246, 0.2); 
 }
 
-/* ૩. નેમ ટાઇટલ - Webkit એરર વગરનું પ્રોપર કોડ */
+/* 3 - Webkit */
 .name-title { 
   font-size: clamp(45px, 8vw, 90px); 
   font-weight: 900; 
@@ -307,11 +307,11 @@ section { padding: 100px 10%; min-height: 100vh; }
 /* --- Global Responsive Reset --- */
 @media (max-width: 1024px) {
   section {
-    padding: 80px 5% !important; /* સાઈડની પેડિંગ ઓછી કરી જેથી લખાણ કપાય નહીં */
+    padding: 80px 5% !important; /* side padding */
     text-align: center;
   }
 
-  /* નેવિગેશન બારને મોબાઈલમાં ટ્રાન્સપરન્ટ અને ફુલ વિડ્થ કરો (રાઉન્ડ કેપ્સ્યુલ હટાવો) */
+  /*nav mobile transporation */
   .nav-container {
     top: 0 !important;
     right: 0 !important;
@@ -325,10 +325,10 @@ section { padding: 100px 10%; min-height: 100vh; }
   }
 
   .nav-links-desktop {
-    display: none; /* ડેસ્કટોપ લિંક્સ છુપાવો, હેમ્બર્ગ મેનુ બતાવો */
+    display: none; /*  */
   }
 
-  /* હીરો સેક્શનમાં લખાણ કપાય છે તે ફિક્સ કરો */
+  /* */
   .name-title {
     font-size: clamp(35px, 10vw, 55px) !important; /* ઓટો સાઈઝ એડજસ્ટમેન્ટ */
     width: 100% !important;
@@ -342,7 +342,7 @@ section { padding: 100px 10%; min-height: 100vh; }
     padding: 0 10px;
   }
 
-  /* ગ્રીડ લેઆઉટને સિંગલ કોલમ કરો */
+  /* Greed layout column */
   .about-grid, .skills-main-grid, .contact-grid {
     grid-template-columns: 1fr !important;
     gap: 30px !important;
@@ -353,7 +353,7 @@ section { padding: 100px 10%; min-height: 100vh; }
   }
 }
 
-/* --- નાના મોબાઈલ માટે ખાસ ફિક્સ --- */
+/* --- mobile--- */
 @media (max-width: 480px) {
   .avatar-main {
     width: 110px !important;
@@ -366,7 +366,7 @@ section { padding: 100px 10%; min-height: 100vh; }
   }
 }
 
-/* ગ્લોબલ ફૉન્ટ સાઈઝ વધારો */
+/* global font size */
 body {
   font-size: 18px; 
 }
@@ -434,23 +434,23 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
 }
-/* ૧. નેવિગેશન બાર કન્ટેનર */
+/* 1- nav container*/
 .nav-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: space-between; /* નામ ડાબે અને મેનુ જમણે રાખવા માટે */
+  justify-content: space-between; /*  */
   align-items: center;
   padding: 15px 8%;
-  background: rgba(7, 7, 9, 0.85); /* ટ્રાન્સપરન્ટ લૂક */
-  backdrop-filter: blur(12px); /* બ્લર ઇફેક્ટ */
+  background: rgba(7, 7, 9, 0.85); /*  */
+  backdrop-filter: blur(12px); /*  */
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  z-index: 2000 !important; /* આનાથી ક્લિક કામ કરવા માંડશે */
+  z-index: 2000 !important; /*  */
 }
 
-/* ૨. ડાબી બાજુનું લોગો અને નામ */
+/*  */
 .nav-left {
   display: flex;
   align-items: center;
@@ -458,7 +458,7 @@ body {
 }
 
 .nav-logo {
-  background: linear-gradient(135deg, #8b5cf6, #3b82f6); /* પર્પલ-બ્લુ ગ્રેડિયન્ટ */
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6); /*  */
   color: white;
   padding: 8px 12px;
   border-radius: 8px;
@@ -482,7 +482,7 @@ body {
 .nav-right a {
   display: flex;
   align-items: center;
-  gap: 8px; /* આઈકોન અને લખાણ વચ્ચેની જગ્યા */
+  gap: 8px; /*ા */
   color: #94a3b8;
   text-decoration: none;
   font-size: 15px;
@@ -491,59 +491,8 @@ body {
   position: relative;
 }
 
-/* ૪. હોવર ઇફેક્ટ */
+/* hover effect */
 .nav-right a:hover {
   color: #8b5cf6;
   transform: translateY(-2px);
-}
-
-/* FORCED MOBILE RESPONSIVENESS */
-@media screen and (max-width: 768px) {
-  
-  /* 1. Navbar: Shrink and move to top */
-  .nav-container {
-    padding: 10px !important;
-    height: 60px !important;
-    justify-content: space-around !important;
-  }
-  .nav-name { display: none !important; } /* Hides "Darshan Kotadiya" in nav */
-  .nav-right { gap: 10px !important; }
-  .nav-right a span { display: none !important; } /* Icons only */
-
-  /* 2. Hero: Push everything down away from Nav */
-  .hero-sec {
-    padding-top: 160px !important; /* Forces content below Navbar */
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    min-height: 100vh !important;
-  }
-
-  /* 3. Avatar & Title: Shrink for small screens */
-  .avatar-main {
-    width: 80px !important;
-    height: 80px !important;
-    font-size: 25px !important;
-    margin-bottom: 15px !important;
-    margin-top: 0 !important;
-  }
-
-  .name-title {
-    font-size: 28px !important; /* Much smaller to fit screen */
-    width: 90% !important;
-    margin: 0 auto !important;
-    line-height: 1.2 !important;
-  }
-
-  .hero-sec p {
-    font-size: 13px !important;
-    width: 85% !important;
-    margin-top: 10px !important;
-  }
-
-  /* 4. Project Cards: Single column */
-  .projects-grid {
-    grid-template-columns: 1fr !important;
-    padding: 0 20px !important;
-  }
 }
