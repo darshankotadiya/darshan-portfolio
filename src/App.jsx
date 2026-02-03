@@ -215,96 +215,97 @@ function App() {
 
     </div>
   </section>
-  <section id="projects" style={{padding: '100px 8%'}}>
-    <h2 className="section-head">My <span>Projects</span></h2>
-    <div className="projects-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginTop: '50px'}}>
-      
-      {/* 1. LinkWave - Social Media App */}
-      <div className="proj-card">
-        <img src="./src/assets/social-media.png" alt="Social Media" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
-        <div style={{padding:'25px'}}>
-          <h4 style={{fontSize:'22px', fontWeight:'700'}}>LinkWave Social</h4>
-          <p style={{color:'#94a3b8', fontSize:'15px', marginTop:'10px', lineHeight:'1.6'}}>
-            A MERN stack social platform with real-time posting, liking, and commenting features.
-          </p>
-          <div style={{marginTop: '25px'}}>
-            <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/SocialMediaApp" target="_blank" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
-          </div>
+ {/* PROJECTS SECTION - 6 Projects with Fixed Image Paths */}
+<section id="projects" style={{padding: '100px 8%'}}>
+  <h2 className="section-head">My <span>Projects</span></h2>
+  <div className="projects-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginTop: '50px'}}>
+    
+    {/* 1. LinkWave - Social Media App */}
+    <div className="proj-card">
+      <img src={socialImg} alt="Social Media" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
+      <div style={{padding:'25px'}}>
+        <h4 style={{fontSize:'22px', fontWeight:'700'}}>LinkWave Social</h4>
+        <p style={{color:'#94a3b8', fontSize:'15px', marginTop:'10px', lineHeight:'1.6'}}>
+          A MERN stack social platform with real-time posting, liking, and commenting features.
+        </p>
+        <div style={{marginTop: '25px'}}>
+          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/SocialMediaApp" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
         </div>
       </div>
-
-      {/* 2. Elite Master - Workspace */}
-      <div className="proj-card">
-        <img src="./src/assets/workspace.png" alt="Workspace" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
-        <div style={{padding:'25px'}}>
-          <h4 style={{fontSize:'22px', fontWeight:'700'}}>Elite Master Workspace</h4>
-          <p style={{color:'#94a3b8', fontSize:'15px', marginTop:'10px', lineHeight:'1.6'}}>
-            Real-time collaboration tool featuring screen sharing and instant messaging.
-          </p>
-          <div style={{marginTop: '25px'}}>
-            <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task-4%20Real%20Communication%20App" target="_blank" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
-          </div>
-        </div>
-      </div>
-
-      {/* 3. ProManager - Dashboard */}
-      <div className="proj-card">
-        <img src="./src/assets/dashboard.png" alt="Dashboard" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
-        <div style={{padding:'25px'}}>
-          <h4 style={{fontSize:'22px', fontWeight:'700'}}>ProManager Dashboard</h4>
-          <p style={{color:'#94a3b8', fontSize:'15px', marginTop:'10px', lineHeight:'1.6'}}>
-            An interactive project insight dashboard to track tasks and team productivity.
-          </p>
-          <div style={{marginTop: '25px'}}>
-            <a href="https://github.com/https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task3-ProjectManagementTool" target="_blank" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
-          </div>
-        </div>
-      </div>
-
-      {/* 4. CodeAlpha - E-commerce */}
-      <div className="proj-card">
-        <img src="./src/assets/ecommerce.png" alt="E-commerce" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
-        <div style={{padding:'25px'}}>
-          <h4 style={{fontSize:'22px', fontWeight:'700'}}>CodeAlpha Store</h4>
-          <p style={{color:'#94a3b8', fontSize:'15px', marginTop:'10px', lineHeight:'1.6'}}>
-            Full-featured e-commerce platform with inventory status and shopping cart.
-          </p>
-          <div style={{marginTop: '25px'}}>
-            <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task1-Ecommerce" target="_blank" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
-          </div>
-        </div>
-      </div>
-
-      {/* 5. Nexus-AI - Tic Tac Toe */}
-      <div className="proj-card">
-        <img src="./src/assets/tictactoe.png" alt="AI Game" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
-        <div style={{padding:'25px'}}>
-          <h4 style={{fontSize:'22px', fontWeight:'700'}}>Nexus-AI Tic-Tac-Toe</h4>
-          <p style={{color:'#94a3b8', fontSize:'15px', marginTop:'10px', lineHeight:'1.6'}}>
-            A smart game engine built with Minimax algorithm for unbeatable logic.
-          </p>
-          <div style={{marginTop: '25px'}}>
-            <a href="https://github.com/darshankotadiya/CODSOFT/tree/main/Task-2-TicTacToe-AI" target="_blank" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
-          </div>
-        </div>
-      </div>
-
-      {/* 6. Nexus-AI - Chat Assistant */}
-      <div className="proj-card">
-        <img src="./src/assets/chat-ai.png" alt="AI Chat" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
-        <div style={{padding:'25px'}}>
-          <h4 style={{fontSize:'22px', fontWeight:'700'}}>Nexus-AI Assistant</h4>
-          <p style={{color:'#94a3b8', fontSize:'15px', marginTop:'10px', lineHeight:'1.6'}}>
-            A rule-based logic engine developed to respond to developer commands.
-          </p>
-          <div style={{marginTop: '25px'}}>
-            <a href="https://github.com/darshankotadiya/CODSOFT/tree/main/Task-1-Chatbot" target="_blank" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </section>
+
+    {/* 2. Elite Master - Workspace */}
+    <div className="proj-card">
+      <img src={workspaceImg} alt="Workspace" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
+      <div style={{padding:'25px'}}>
+        <h4 style={{fontSize:'22px', fontWeight:'700'}}>Elite Master Workspace</h4>
+        <p style={{color:'#94a3b8', fontSize:'15px', marginTop:'10px', lineHeight:'1.6'}}>
+          Real-time collaboration tool featuring screen sharing and instant messaging.
+        </p>
+        <div style={{marginTop: '25px'}}>
+          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task-4%20Real%20Communication%20App" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
+        </div>
+      </div>
+    </div>
+
+    {/* 3. ProManager - Dashboard */}
+    <div className="proj-card">
+      <img src={dashboardImg} alt="Dashboard" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
+      <div style={{padding:'25px'}}>
+        <h4 style={{fontSize:'22px', fontWeight:'700'}}>ProManager Dashboard</h4>
+        <p style={{color:'#94a3b8', fontSize:'15px', marginTop:'10px', lineHeight:'1.6'}}>
+          An interactive project insight dashboard to track tasks and team productivity.
+        </p>
+        <div style={{marginTop: '25px'}}>
+          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task3-ProjectManagementTool" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
+        </div>
+      </div>
+    </div>
+
+    {/* 4. CodeAlpha - E-commerce */}
+    <div className="proj-card">
+      <img src={ecommerceImg} alt="E-commerce" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
+      <div style={{padding:'25px'}}>
+        <h4 style={{fontSize:'22px', fontWeight:'700'}}>CodeAlpha Store</h4>
+        <p style={{color:'#94a3b8', fontSize:'15px', marginTop:'10px', lineHeight:'1.6'}}>
+          Full-featured e-commerce platform with inventory status and shopping cart.
+        </p>
+        <div style={{marginTop: '25px'}}>
+          <a href="https://github.com/darshankotadiya/CodeAlpha_Tasks/tree/main/Task1-Ecommerce" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
+        </div>
+      </div>
+    </div>
+
+    {/* 5. Nexus-AI - Tic Tac Toe */}
+    <div className="proj-card">
+      <img src={tictactoeImg} alt="AI Game" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
+      <div style={{padding:'25px'}}>
+        <h4 style={{fontSize:'22px', fontWeight:'700'}}>Nexus-AI Tic-Tac-Toe</h4>
+        <p style={{color:'#94a3b8', fontSize:'15px', marginTop:'10px', lineHeight:'1.6'}}>
+          A smart game engine built with Minimax algorithm for unbeatable logic.
+        </p>
+        <div style={{marginTop: '25px'}}>
+          <a href="https://github.com/darshankotadiya/CODSOFT/tree/main/Task-2-TicTacToe-AI" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
+        </div>
+      </div>
+    </div>
+
+    {/* 6. Nexus-AI - Chat Assistant */}
+    <div className="proj-card">
+      <img src={chatAiImg} alt="AI Chat" className="proj-img" style={{width:'100%', height:'200px', objectFit:'cover'}} />
+      <div style={{padding:'25px'}}>
+        <h4 style={{fontSize:'22px', fontWeight:'700'}}>Nexus-AI Assistant</h4>
+        <p style={{color:'#94a3b8', fontSize:'15px', marginTop:'10px', lineHeight:'1.6'}}>
+          A rule-based logic engine developed to respond to developer commands.
+        </p>
+        <div style={{marginTop: '25px'}}>
+          <a href="https://github.com/darshankotadiya/CODSOFT/tree/main/Task-1-Chatbot" target="_blank" rel="noopener noreferrer" className="tech-tag" style={{textDecoration:'none'}}>Source Code</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   {/* 5. PROFESSIONAL EXPERIENCE - STRATEGICALLY ORDERED */}
   <section id="experience" style={{padding: '100px 8%'}}>
