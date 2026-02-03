@@ -246,7 +246,7 @@ function App() {
 
         </div>
       </section>
-     {/* PROJECTS SECTION - 6 Projects with Fixed Variable Names */}
+    {/* PROJECTS SECTION - 6 Projects with Fixed Variable Names */}
 <section id="projects" style={{ padding: '100px 8%' }}>
   <h2 className="section-head">My <span>Projects</span></h2>
   <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginTop: '50px' }}>
