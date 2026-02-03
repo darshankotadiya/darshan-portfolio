@@ -497,60 +497,67 @@ body {
   transform: translateY(-2px);
 }
 
-/* ૧. મોબાઈલ રિસ્પોન્સિવ ફિક્સ - 768px થી નાની સ્ક્રીન માટે */
+/* COMPLETE MOBILE OVERHAUL */
 @media (max-width: 768px) {
   
-  /* નેવબારને નાનું કરો અને નામ છુપાવો */
+  /* 1. Navbar Fix - Prevents overlapping and saves space */
   .nav-container {
-    padding: 10px 5% !important;
-    justify-content: center !important; /* લોગો અને મેનુને સેન્ટર કરવા માટે */
+    padding: 10px 20px !important;
+    height: auto !important;
+    flex-wrap: wrap !important; /* Allows items to move to next line if needed */
   }
 
   .nav-name {
-    display: none !important; /* મોબાઈલમાં "Darshan Kotadiya" નામ છુપાવો */
+    display: none !important; /* Hides large name on mobile */
   }
 
   .nav-right {
-    gap: 15px !important;
+    gap: 12px !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 5px !important;
   }
 
   .nav-right a span {
-    display: none !important; /* મોબાઈલમાં માત્ર આઈકોન્સ બતાવો */
+    display: none !important; /* Shows ONLY icons to keep navbar thin */
   }
 
-  /* હીરો સેક્શનમાં લખાણની સાઈઝ ઘટાડો */
-  .name-title {
-    font-size: 36px !important; /* નામની સાઈઝ નાની કરી */
-    line-height: 1.2 !important;
+  /* 2. Hero Section Fix - Adds space below Navbar */
+  .hero-sec {
+    padding-top: 140px !important; /* Pushes content down so Navbar doesn't cover it */
+    padding-bottom: 60px !important;
+    min-height: auto !important;
   }
 
   .avatar-main {
-    width: 100px !important; /* લોગોની સાઈઝ નાની કરી */
-    height: 100px !important;
-    font-size: 35px !important;
-    margin-top: 100px !important; /* નેવબારથી નીચે લેવા માટે */
+    width: 90px !important;
+    height: 90px !important;
+    font-size: 30px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .name-title {
+    font-size: 32px !important; /* Shrunk specifically for mobile */
+    line-height: 1.1 !important;
+    display: block !important;
+    width: 100% !important;
   }
 
   .hero-sec p {
     font-size: 14px !important;
-    padding: 0 15px !important;
+    line-height: 1.6 !important;
+    padding: 0 10px !important;
   }
 
-  /* પ્રોજેક્ટ ગ્રીડને ૧ કોલમ કરો */
-  .projects-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    padding: 0 5% !important;
+  /* 3. Social & Button scaling */
+  .social-links {
+    gap: 15px !important;
+    margin-top: 20px !important;
+  }
+
+  .explore-btn {
+    padding: 12px 25px !important;
+    font-size: 14px !important;
+    margin-top: 30px !important;
   }
 }
-
-/* ૨. અતિશય નાની સ્ક્રીન (480px) માટે */
-@media (max-width: 480px) {
-  .name-title {
-    font-size: 30px !important;
-  }
-  
-  .nav-right {
-    gap: 10px !important;
-  }
-}  
