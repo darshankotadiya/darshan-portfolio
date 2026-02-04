@@ -840,3 +840,29 @@ html {
     transform: translateY(-3px);
   }
 }
+
+/* ૧. સેક્શનને સેન્ટર કરવા અને પાછળ તારા મંડળ જેવી લાઈવ ઇફેક્ટ આપવા */
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: radial-gradient(rgba(139, 92, 246, 0.15) 1px, transparent 1px);
+  background-size: 30px 30px; /* આનાથી પાછળ ઝીણા ટપકા જેવી ઇફેક્ટ આવશે */
+}
+
+/* ૨. મોબાઈલ માટે ખાસ રિસ્પોન્સિવ સેટિંગ */
+@media (max-width: 768px) {
+  #contact {
+    padding: 60px 5% !important; /* સાઈડની જગ્યા ઘટાડવી જેથી ફોર્મ મોટું દેખાય */
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr !important; /* મોબાઈલમાં બધું એકની નીચે એક જ આવશે */
+    width: 100%;
+  }
+
+  /* ઈનપુટ ફીલ્ડ્સને મોબાઈલમાં સરખા કરવા */
+  .input-field {
+    width: 100% !important;
+  }
+}
