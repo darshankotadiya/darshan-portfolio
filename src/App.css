@@ -915,4 +915,24 @@ html {
     margin-bottom: 15px !important;
   }
 }
+/* મોબાઈલ માટે ખાસ રિસ્પોન્સિવ લેફ્ટ એલાઈનમેન્ટ */
+@media (max-width: 768px) {
+  #contact, .contact-grid, .contact-info-list, .form-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; /* બધું ડાબી બાજુથી શરૂ થશે */
+    text-align: left !important;
+  }
+
+  .contact-info-card {
+    justify-content: flex-start !important;
+    padding: 15px 0 !important; /* સાઈડની વધારાની સ્પેસ કાઢી નાખી */
+    width: 100% !important;
+  }
+
+  .follow-me-box, .social-icon-row {
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+  }
+}
 
