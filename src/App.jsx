@@ -791,23 +791,8 @@ function App() {
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
-      <section
-        id='contact'
-        style={{ padding: '100px 8%', background: '#0a0a0c' }}
-      >
-        <h2 className='section-head'>
-          Get In <span>Touch</span>
-        </h2>
-        <div
-          className='contact-grid'
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '40px',
-            marginTop: '50px',
-          }}
-        >
+     
+        
           {/* Left side content */}
           <div>
             <h3 style={{ fontSize: '28px', color: 'white' }}>Let's Connect</h3>
