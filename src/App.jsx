@@ -799,14 +799,16 @@ function App() {
         <h2 className='section-head'>
           Get In <span>Touch</span>
         </h2>
-        <div
-          className='contact-grid'
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '40px',
-            marginTop: '50px',
-          }}
+        {/* CONTACT SECTION માં આ લાઈન શોધો અને બદલો */}
+<div
+  className='contact-grid'
+  style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', // અહીં 280px કરી નાખવું
+    gap: '40px',
+    marginTop: '50px',
+  }}
+>
         >
           {/* Left side content */}
           <div>
