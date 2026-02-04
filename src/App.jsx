@@ -791,20 +791,6 @@ function App() {
         </div>
       </section>
 
-      {/* CONTACT SECTION - Balanced and Responsive */}
-<section id='contact' style={{ padding: '100px 8%', background: '#0a0a0c' }}>
-  <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-    <h2 className='section-head'>
-      Get In <span>Touch</span>
-    </h2>
-    
-    <div className='contact-grid-container' style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-      gap: '60px',
-      marginTop: '50px',
-      alignItems: 'start'
-    }}>
       {/* CONTACT SECTION - Live Background & Balanced Layout */}
 <section id='contact' className="live-contact-section">
   {/* લાઈવ બેકગ્રાઉન્ડ ઇફેક્ટ માટે ઓવરલે */}
