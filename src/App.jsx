@@ -871,52 +871,32 @@ function App() {
               </div>
             </div>
 
-            {/* Follow Me Section */}
-            <div style={{ marginTop: '50px' }}>
-              <p
-                style={{
-                  color: '#f0f6fc',
-                  marginBottom: '20px',
-                  fontWeight: '600',
-                  fontSize: '18px',
-                }}
-              >
-                Follow Me
-              </p>
-              <div style={{ display: 'flex', gap: '20px' }}>
-                <a
-                  href='https://github.com/darshankotadiya'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='footer-social-icon'
-                >
-                  <Github size={22} />
-                </a>
-                <a
-                  href='https://www.linkedin.com/in/darshan-kotadiya-70416a251/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='footer-social-icon'
-                >
-                  <Linkedin size={22} />
-                </a>
-                <a
-                  href='https://wa.me/919624332477'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='footer-social-icon'
-                >
-                  <MessageCircle size={22} />
-                </a>
-                <a
-                  href='mailto:darshankotadiya1010@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Darshan,%0A%0AI%20saw%20your%20portfolio...'
-                  className='icon-box-about'
-                  style={{ textDecoration: 'none' }}
-                >
-                  <Mail size={24} />
-                </a>
-              </div>
-            </div>
+           {/* Follow Me Section */}
+<div style={{ marginTop: '50px' }}>
+  <p style={{
+    color: '#f0f6fc',
+    marginBottom: '20px',
+    fontWeight: '600',
+    fontSize: '18px',
+  }}>
+    Follow Me
+  </p>
+  <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+    <a href='https://github.com/darshankotadiya' target='_blank' rel='noopener noreferrer' className='footer-social-icon'>
+      <Github size={22} />
+    </a>
+    <a href='https://www.linkedin.com/in/darshan-kotadiya-70416a251/' target='_blank' rel='noopener noreferrer' className='footer-social-icon'>
+      <Linkedin size={22} />
+    </a>
+    <a href='https://wa.me/919624332477' target='_blank' rel='noopener noreferrer' className='footer-social-icon'>
+      <MessageCircle size={22} />
+    </a>
+    {/* હવે ઈમેઈલ આઇકન પણ બીજા જેવો જ દેખાશે */}
+    <a href='mailto:darshankotadiya1010@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Darshan...' className='footer-social-icon'>
+      <Mail size={22} />
+    </a>
+  </div>
+</div>
           </div>
 
           {/* Contact Form - CHANGED TO SEND ON WHATSAPP DIRECTLY */}
