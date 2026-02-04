@@ -797,7 +797,7 @@ function App() {
         style={{ padding: , background: '#0a0a0c' }}
       >
         <h2 className='section-head'>
-          Get In <span>Touch</span>
+          Get In darshan<span>Touch</span>
         </h2>
 		
 {/* CONTACT SECTION માં આ લાઈન શોધો અને બદલો */}
