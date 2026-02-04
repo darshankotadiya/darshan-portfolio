@@ -858,3 +858,61 @@ html {
   }
 }
 
+/* ૧. આઇકન્સને એકસરખા ગોળ અને પર્પલ કરવા */
+.footer-social-icon, .icon-box-purple {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 45px !important;
+  height: 45px !important;
+  background: #8b5cf6 !important; /* તારા સ્ક્રીનશોટ મુજબનો પર્પલ કલર */
+  border-radius: 50% !important; /* બધા આઇકન્સ ગોળ થઈ જશે */
+  color: white !important;
+  padding: 0 !important;
+}
+
+/* ૨. લાઈવ તારા મંડળ જેવી બેકગ્રાઉન્ડ ઇફેક્ટ */
+#contact {
+  background-image: radial-gradient(rgba(139, 92, 246, 0.2) 1px, transparent 1px) !important;
+  background-size: 30px 30px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/* ૩. મોબાઈલ રિસ્પોન્સિવ (જમણી બાજુ ખેંચાતું રોકવા માટે) */
+@media (max-width: 768px) {
+  #contact {
+    padding: 60px 20px !important; /* સાઈડની વધારાની જગ્યા કાઢી નાખી */
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr !important; /* ફોર્મ અને ટેક્સ્ટ એકની નીચે એક આવશે */
+    width: 100% !important;
+    gap: 20px !important;
+  }
+
+  /* ૪. Email/Phone/WhatsApp ટેક્સ્ટની વધારાની સ્પેસ ઘટાડવા */
+  .contact-info-card {
+    padding: 15px !important;
+    gap: 15px !important; /* આનાથી આઇકન અને ટેક્સ્ટ વચ્ચેની સ્પેસ ઓછી થશે */
+    width: 100% !important;
+    margin-bottom: 0 !important;
+  }
+
+  .label {
+    margin: 0 !important; /* 'Email' ટેક્સ્ટની આસપાસની સ્પેસ કાઢી નાખી */
+    font-size: 14px !important;
+  }
+
+  .value {
+    font-size: 14px !important;
+  }
+
+  /* ફોર્મ ઇનપુટને મોબાઈલમાં ફિટ કરવા */
+  .input-field {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+  }
+}
+
