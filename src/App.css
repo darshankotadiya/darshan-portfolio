@@ -841,12 +841,5 @@ html {
   }
 }
 
-/* ૧. સેક્શનને સેન્ટર કરવા અને પાછળ તારા મંડળ જેવી લાઈવ ઇફેક્ટ આપવા */
-#contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-image: radial-gradient(rgba(139, 92, 246, 0.15) 1px, transparent 1px);
-  background-size: 30px 30px; /* આનાથી પાછળ ઝીણા ટપકા જેવી ઇફેક્ટ આવશે */
-}
+
 
