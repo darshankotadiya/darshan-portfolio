@@ -818,9 +818,22 @@ function App() {
               <a href='mailto:darshankotadiya1010@gmail.com' className='value'>darshankotadiya1010@gmail.com</a>
             </div>
           </div>
-
+ <div className='contact-info-card'>
+                <div className='icon-box-purple'>
+                  <PhoneCall size={35} color='white' />
+                </div>
+                <div>
+                  <p className='label'>Phone</p>
+                  <a
+                    href='tel:+919624332477'
+                    className='value'
+                    style={{ textDecoration: 'none', display: 'block' }}
+                  >
+                    +91 96243 32477
+                  </a>
+                </div>
           <div className='contact-info-card'>
-            <div className='icon-box-purple'><MessageCircle size={24} color='white' /></div>
+            <div className='icon-box-purple'><MessageSquare size={24} color='white' /></div>
             <div>
               <p className='label'>WhatsApp</p>
               <a href='https://wa.me/919624332477' target='_blank' rel='noopener noreferrer' className='value'>+91 96243 32477</a>
