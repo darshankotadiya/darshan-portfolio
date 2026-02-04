@@ -791,15 +791,16 @@ function App() {
         </div>
       </section>
 
-    
- {/* CONTACT SECTION */}
-      <section
-        id='contact'
-        style={{ padding: , background: '#0a0a0c' }}
-      >
-        <h2 className='section-head'>
-          Get In <span>Touch</span>
-        </h2>
+    <section id='contact' className="constellation-bg">
+  {/* લાઈવ એનિમેટેડ તારા મંડળ લેયર */}
+  <div className="stars-animation"></div>
+  
+  <div className="contact-inner-container">
+    <h2 className='section-head'>Get In <span>Touch</span></h2>
+    {/* બાકીનો અંદરનો કોડ ડાબી બાજુ સેટ કરેલો છે */}
+    <div className='contact-grid-left'>
+       {/* તારી વિગતો અહીં આવશે */}
+    </div>
         {/* CONTACT SECTION માં આ લાઈન શોધો અને બદલો */}
 {/* CONTACT SECTION માં આ લાઈન શોધો અને બદલો */}
 <div
