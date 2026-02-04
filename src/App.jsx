@@ -791,14 +791,13 @@ function App() {
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
-      <section
-        id='contact'
-        style={{ padding: '100px 8%', background: '#0a0a0c' }}
-      >
-        <h2 className='section-head'>
-          Get In <span>Touch</span>
-        </h2>
+    {/* CONTACT SECTION */}
+<section id='contact' className="contact-live-section">
+  {/* પાછળ ચાલતું લાઈવ એનિમેશન */}
+  <div className="particles-container"></div>
+  
+  <div className="contact-content-wrapper">
+    <h2 className='section-head'>Get In <span>Touch</span></h2>
         {/* CONTACT SECTION માં આ લાઈન શોધો અને બદલો */}
 {/* CONTACT SECTION માં આ લાઈન શોધો અને બદલો */}
 <div
