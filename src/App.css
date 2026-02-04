@@ -896,4 +896,42 @@ html {
 
 .input-block {
   flex: 1;
-  margin-bottom:
+  margin-bottom: 20px;
+}
+
+.input-field-new {
+  width: 100%;
+  background: #111111;
+  border: 1px solid #333;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.send-btn-final {
+  background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* ૪. Responsive Design */
+@media (max-width: 850px) {
+  .contact-grid-container {
+    grid-template-columns: 1fr; /* મોબાઈલમાં એકની નીચે એક આવી જશે */
+    gap: 40px;
+  }
+  
+  .input-row-flex {
+    flex-direction: column;
+  }
+}
