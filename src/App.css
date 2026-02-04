@@ -1010,3 +1010,53 @@ html {
   font-size: 1.1rem !important;
   font-weight: 800 !important;
 }
+/* Live Grid Background */
+.contact-live-section {
+  padding: 100px 5%;
+  background-color: #0a0a0c;
+  background-image: radial-gradient(rgba(139, 92, 246, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px; /* આનાથી પાછળ ઝીણા ટપકા જેવી લાઈવ ઇફેક્ટ આવશે */
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 1100px; /* આનાથી ફોર્મ જમણી બાજુ વધારે નહીં ખેંચાય */
+}
+
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+/* Explore Work બટન - પ્રોપર અને મોટું */
+.explore-btn-large {
+  padding: 18px 45px;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+  border-radius: 50px;
+  font-weight: 800;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* મોબાઈલ વ્યુ માટે */
+@media (max-width: 900px) {
+  .contact-main-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .form-group-row {
+    flex-direction: column;
+  }
+  .footer-social-icon {
+    margin: 0 auto;
+  }
+}
