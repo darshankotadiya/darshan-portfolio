@@ -899,62 +899,51 @@ function App() {
 </div>
           </div>
 
-          {/* Contact Form - CHANGED TO SEND ON WHATSAPP DIRECTLY */}
-          <form className='form-container' onSubmit={handleSubmit}>
-            <div style={{ display: 'flex', gap: '15px', marginBottom: '20px' }}>
-              <div style={{ flex: 1 }}>
-                <label>Full Name</label>
-                <input
-                  className='input-field'
-                  name='name'
-                  placeholder='Your name'
-                  required
-                />
-              </div>
-              <div style={{ flex: 1 }}>
-                <label>Email Address</label>
-                <input
-                  className='input-field'
-                  name='email'
-                  type='email'
-                  placeholder='your.email@example.com'
-                  required
-                />
-              </div>
-            </div>
+         {/* Contact Section with Live Background & Balanced Layout */}
+<section id="contact" className="contact-section-live">
+  <div className="contact-wrapper">
+    <h2 className="get-in-touch-title">Get In <span>Touch</span></h2>
+    
+    <div className="contact-grid-layout">
+      {/* ડાબી બાજુની વિગતો */}
+      <div className="contact-info-panel">
+        <h3 style={{ color: 'white', fontSize: '24px', marginBottom: '15px' }}>Let's Connect</h3>
+        <p style={{ color: '#94a3b8', lineHeight: '1.6' }}>
+          Available for freelance and full-time roles. Reach out via email, LinkedIn or WhatsApp.
+        </p>
+        {/* તારા આઇકન્સ અહીં મૂકવા જે આપણે અગાઉ સેટ કર્યા છે */}
+      </div>
 
-            <div style={{ marginBottom: '20px' }}>
-              <label>Subject</label>
-              <input
-                className='input-field'
-                name='subject'
-                placeholder='Project discussion'
-                required
-              />
-            </div>
-
-            <div style={{ marginBottom: '30px' }}>
-              <label>Message</label>
-              <textarea
-                className='input-field'
-                name='message'
-                placeholder='Tell me about your project...'
-                rows='5'
-                required
-              ></textarea>
-            </div>
-
-            <button
-              type='submit'
-              className='send-btn'
-              style={{ border: 'none', width: '100%', cursor: 'pointer' }}
-            >
-              <Send size={18} /> Send Message on WhatsApp
-            </button>
-          </form>
+      {/* જમણી બાજુનું ફોર્મ - ઈમેઈલ મોકલવા માટે */}
+      <form className='form-container' onSubmit={handleSubmit}>
+        <div className="input-row">
+          <div className="input-block">
+            <label>Full Name</label>
+            <input className='input-field' name='name' placeholder='Your name' required />
+          </div>
+          <div className="input-block">
+            <label>Email Address</label>
+            <input className='input-field' name='email' type='email' placeholder='your.email@example.com' required />
+          </div>
         </div>
-      </section>
 
+        <div className="input-block">
+          <label>Subject</label>
+          <input className='input-field' name='subject' placeholder='Project discussion' required />
+        </div>
+
+        <div className="input-block">
+          <label>Message</label>
+          <textarea className='input-field' name='message' placeholder='Tell me about your project...' rows='5' required></textarea>
+        </div>
+
+        <button type='submit' className='submit-btn-new'>
+          <Send size={18} /> Send Message 
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
       {/* FOOTER SECTION */}
       <footer className='footer-main'>
         <div className='footer-left'>
