@@ -780,3 +780,39 @@ body {
     letter-spacing: 2px;
   }
 }
+/* ૧. Explore Work બટન માટે ગ્રેડિયન્ટ કલર */
+.explore-btn {
+  background: linear-gradient(90deg, #8b5cf6, #3b82f6) !important;
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.explore-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+}
+
+/* ૨. બધા આઇકન્સને એકસરખા પર્પલ કલરમાં કરવા માટે */
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #8b5cf6 !important; /* તારા સ્ક્રીનશોટ મુજબનો પર્પલ કલર */
+  border-radius: 12px;
+  color: white !important;
+  transition: all 0.3s ease;
+}
+
+/* ૩. Get In Touch ને મોબાઈલમાં રિસ્પોન્સિવ કરવા માટે */
+@media (max-width: 768px) {
+  #contact .grid {
+    grid-template-columns: 1fr !important; /* મોબાઈલમાં એકની નીચે એક આવી જશે */
+  }
+  
+  .get-in-touch-title {
+    font-size: 2.5rem !important;
+    text-align: center;
+  }
+}
