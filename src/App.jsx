@@ -805,15 +805,26 @@ function App() {
       marginTop: '50px',
       alignItems: 'start'
     }}>
+      {/* CONTACT SECTION - Live Background & Balanced Layout */}
+<section id='contact' className="live-contact-section">
+  {/* લાઈવ બેકગ્રાઉન્ડ ઇફેક્ટ માટે ઓવરલે */}
+  <div className="bg-animation-overlay"></div>
+
+  <div className="contact-main-wrapper">
+    <h2 className='section-head'>
+      Get In <span>Touch</span>
+    </h2>
+    
+    <div className='contact-balanced-grid'>
       
-      {/* ડાબી બાજુ: Let's Connect */}
-      <div>
+      {/* ડાબી બાજુ: વિગતો */}
+      <div className="contact-info-panel">
         <h3 style={{ fontSize: '28px', color: 'white' }}>Let's Connect</h3>
-        <p style={{ color: '#94a3b8', margin: '20px 0', fontSize: '15px', lineHeight: '1.6' }}>
+        <p style={{ color: '#94a3b8', margin: '20px 0', fontSize: '15px' }}>
           Available for freelance and full-time roles. Reach out via email, LinkedIn or WhatsApp.
         </p>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+        <div className="contact-cards-stack">
           <div className='contact-info-card'>
             <div className='icon-box-purple'><Mail size={24} color='white' /></div>
             <div>
@@ -823,20 +834,11 @@ function App() {
           </div>
 
           <div className='contact-info-card'>
-            <div className='icon-box-purple'><PhoneCall size={24} color='white' /></div>
-            <div>
-              <p className='label'>Phone</p>
-              <a href='tel:+919624332477' className='value'>+91 96243 32477</a>
-            </div>
-            {/* WHATSAPP CARD - નવું એડ કર્યું */}
-          <div className='contact-info-card'>
-            <div className='icon-box-purple'><MessageSquare size={24} color='white' /></div>
+            <div className='icon-box-purple'><MessageCircle size={24} color='white' /></div>
             <div>
               <p className='label'>WhatsApp</p>
               <a href='https://wa.me/919624332477' target='_blank' rel='noopener noreferrer' className='value'>+91 96243 32477</a>
             </div>
-          </div>
-        </div>
           </div>
         </div>
 
