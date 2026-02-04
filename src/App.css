@@ -935,62 +935,29 @@ html {
     flex-direction: column;
   }
 }
-/* ૧. લાઈવ બેકગ્રાઉન્ડ અને પ્રોપર પેડિંગ */
-.contact-live-bg {
-  padding: 100px 5%;
-  background: #0a0a0c;
-  position: relative;
-  overflow: hidden; /* પાર્ટીકલ્સ માટે */
-}
-
-/* ૨. આખા સેક્શનને સેન્ટર કરવા માટે */
-.contact-main-container {
-  max-width: 1100px; /* ફોર્મ વધારે મોટું ન થાય તે માટે */
-  margin: 0 auto;
-}
-
-/* ૩. ૫૦-૫૦% બેલેન્સ ગ્રીડ */
-.contact-flex-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 50px;
-  margin-top: 50px;
-  align-items: start;
-}
-
-/* ૪. ફોર્મ એલાઈનમેન્ટ સુધારો */
-.form-wrapper-balanced {
+/* ૧. આઇકન્સને એકસરખા ગોળ અને પર્પલ કરવા */
+.footer-social-icon {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 50%;
+  color: #8b5cf6;
+  transition: 0.3s ease;
 }
 
-.form-row {
-  display: flex;
-  gap: 15px;
-}
-
-/* ૫. Explore My Work બટન - પ્રોપર સાઈઝ */
-.explore-btn-large {
-  padding: 18px 45px;
-  font-size: 1.1rem;
-  border-radius: 50px;
-  background: linear-gradient(90deg, #8b5cf6, #3b82f6);
-  font-weight: 800;
-  cursor: pointer;
-  border: none;
+.footer-social-icon:hover {
+  background: #8b5cf6;
   color: white;
-  transition: 0.3s;
+  transform: translateY(-5px);
 }
 
-/* ૬. મોબાઈલ રિસ્પોન્સિવ (એકની નીચે એક) */
-@media (max-width: 900px) {
-  .contact-flex-layout {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .form-row {
+/* ૨. મોબાઈલ રિસ્પોન્સિવ (એકની નીચે એક આવશે) */
+@media (max-width: 768px) {
+  .form-row-flex {
     flex-direction: column;
   }
 }
