@@ -791,190 +791,89 @@ function App() {
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
-      <section
-        id='contact'
-        style={{ padding: '100px 8%', background: '#0a0a0c' }}
-      >
-        <h2 className='section-head'>
-          Get In <span>Touch</span>
-        </h2>
-        <div
-          className='contact-grid'
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '40px',
-            marginTop: '50px',
-          }}
-        >
-          {/* Left side content */}
-          <div>
-            <h3 style={{ fontSize: '28px', color: 'white' }}>Let's Connect</h3>
-            <p style={{ color: '#94a3b8', margin: '20px 0', fontSize: '15px' }}>
-              Available for freelance and full-time roles. Reach out via email,
-              LinkedIn or WhatsApp.
-            </p>
+      {/* CONTACT SECTION - Balanced and Responsive */}
+<section id='contact' style={{ padding: '100px 8%', background: '#0a0a0c' }}>
+  <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+    <h2 className='section-head'>
+      Get In <span>Touch</span>
+    </h2>
+    
+    <div className='contact-grid-container' style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+      gap: '60px',
+      marginTop: '50px',
+      alignItems: 'start'
+    }}>
+      
+      {/* ડાબી બાજુ: Let's Connect */}
+      <div>
+        <h3 style={{ fontSize: '28px', color: 'white' }}>Let's Connect</h3>
+        <p style={{ color: '#94a3b8', margin: '20px 0', fontSize: '15px', lineHeight: '1.6' }}>
+          Available for freelance and full-time roles. Reach out via email, LinkedIn or WhatsApp.
+        </p>
 
-            <div
-              className='contact-info-list'
-              style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}
-            >
-              <div className='contact-info-card'>
-                <div className='icon-box-purple'>
-                  <Mail size={35} color='white' />
-                </div>
-                <div>
-                  <p className='label'>Email</p>
-                  <a
-                    href='mailto:darshankotadiya1010@gmail.com'
-                    className='value'
-                    style={{ textDecoration: 'none', display: 'block' }}
-                  >
-                    darshankotadiya1010@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className='contact-info-card'>
-                <div className='icon-box-purple'>
-                  <PhoneCall size={35} color='white' />
-                </div>
-                <div>
-                  <p className='label'>Phone</p>
-                  <a
-                    href='tel:+919624332477'
-                    className='value'
-                    style={{ textDecoration: 'none', display: 'block' }}
-                  >
-                    +91 96243 32477
-                  </a>
-                </div>
-              </div>
-
-              <div className='contact-info-card'>
-                <div className='icon-box-purple'>
-                  <MessageSquare size={35} color='white' />
-                </div>
-                <div>
-                  <p className='label'>WhatsApp</p>
-                  <a
-                    href='https://wa.me/919624332477'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='value'
-                    style={{ textDecoration: 'none', display: 'block' }}
-                  >
-                    +91 96243 32477
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Follow Me Section */}
-            <div style={{ marginTop: '50px' }}>
-              <p
-                style={{
-                  color: '#f0f6fc',
-                  marginBottom: '20px',
-                  fontWeight: '600',
-                  fontSize: '18px',
-                }}
-              >
-                Follow Me
-              </p>
-              <div style={{ display: 'flex', gap: '20px' }}>
-                <a
-                  href='https://github.com/darshankotadiya'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='footer-social-icon'
-                >
-                  <Github size={22} />
-                </a>
-                <a
-                  href='https://www.linkedin.com/in/darshan-kotadiya-70416a251/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='footer-social-icon'
-                >
-                  <Linkedin size={22} />
-                </a>
-                <a
-                  href='https://wa.me/919624332477'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='footer-social-icon'
-                >
-                  <MessageCircle size={22} />
-                </a>
-                <a
-                  href='mailto:darshankotadiya1010@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Darshan,%0A%0AI%20saw%20your%20portfolio...'
-                  className='icon-box-about'
-                  style={{ textDecoration: 'none' }}
-                >
-                  <Mail size={24} />
-                </a>
-              </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+          <div className='contact-info-card'>
+            <div className='icon-box-purple'><Mail size={24} color='white' /></div>
+            <div>
+              <p className='label'>Email</p>
+              <a href='mailto:darshankotadiya1010@gmail.com' className='value'>darshankotadiya1010@gmail.com</a>
             </div>
           </div>
 
-          {/* Contact Form - CHANGED TO SEND ON WHATSAPP DIRECTLY */}
-          <form className='form-container' onSubmit={handleSubmit}>
-            <div style={{ display: 'flex', gap: '15px', marginBottom: '20px' }}>
-              <div style={{ flex: 1 }}>
-                <label>Full Name</label>
-                <input
-                  className='input-field'
-                  name='name'
-                  placeholder='Your name'
-                  required
-                />
-              </div>
-              <div style={{ flex: 1 }}>
-                <label>Email Address</label>
-                <input
-                  className='input-field'
-                  name='email'
-                  type='email'
-                  placeholder='your.email@example.com'
-                  required
-                />
-              </div>
+          <div className='contact-info-card'>
+            <div className='icon-box-purple'><PhoneCall size={24} color='white' /></div>
+            <div>
+              <p className='label'>Phone</p>
+              <a href='tel:+919624332477' className='value'>+91 96243 32477</a>
             </div>
-
-            <div style={{ marginBottom: '20px' }}>
-              <label>Subject</label>
-              <input
-                className='input-field'
-                name='subject'
-                placeholder='Project discussion'
-                required
-              />
-            </div>
-
-            <div style={{ marginBottom: '30px' }}>
-              <label>Message</label>
-              <textarea
-                className='input-field'
-                name='message'
-                placeholder='Tell me about your project...'
-                rows='5'
-                required
-              ></textarea>
-            </div>
-
-            <button
-              type='submit'
-              className='send-btn'
-              style={{ border: 'none', width: '100%', cursor: 'pointer' }}
-            >
-              <Send size={18} /> Send Message on WhatsApp
-            </button>
-          </form>
+          </div>
         </div>
-      </section>
 
+        {/* Follow Me Section - બધા આઇકન્સ હવે એકસરખા દેખાશે */}
+        <div style={{ marginTop: '50px' }}>
+          <p style={{ color: '#f0f6fc', marginBottom: '20px', fontWeight: '600', fontSize: '18px' }}>Follow Me</p>
+          <div style={{ display: 'flex', gap: '20px' }}>
+            <a href='https://github.com/darshankotadiya' target='_blank' rel='noopener noreferrer' className='footer-social-icon'><Github size={22} /></a>
+            <a href='https://www.linkedin.com/in/darshan-kotadiya-70416a251/' target='_blank' rel='noopener noreferrer' className='footer-social-icon'><Linkedin size={22} /></a>
+            <a href='https://wa.me/919624332477' target='_blank' rel='noopener noreferrer' className='footer-social-icon'><MessageCircle size={22} /></a>
+            {/* હવે આ ઈમેઈલ આઇકન પણ બીજા જેવો જ દેખાશે */}
+            <a href='mailto:darshankotadiya1010@gmail.com' className='footer-social-icon'><Mail size={22} /></a>
+          </div>
+        </div>
+      </div>
+
+      {/* જમણી બાજુ: Contact Form */}
+      <form className='form-container' onSubmit={handleSubmit} style={{ width: '100%' }}>
+        <div className="form-row-flex" style={{ display: 'flex', gap: '15px', marginBottom: '20px' }}>
+          <div style={{ flex: 1 }}>
+            <label>Full Name</label>
+            <input className='input-field' name='name' placeholder='Your name' required />
+          </div>
+          <div style={{ flex: 1 }}>
+            <label>Email Address</label>
+            <input className='input-field' name='email' type='email' placeholder='your@example.com' required />
+          </div>
+        </div>
+
+        <div style={{ marginBottom: '20px' }}>
+          <label>Subject</label>
+          <input className='input-field' name='subject' placeholder='Project discussion' required />
+        </div>
+
+        <div style={{ marginBottom: '30px' }}>
+          <label>Message</label>
+          <textarea className='input-field' name='message' placeholder='Tell me about your project...' rows='5' required style={{ resize: 'none' }}></textarea>
+        </div>
+
+        <button type='submit' className='send-btn' style={{ border: 'none', width: '100%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+          <Send size={18} /> Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
       {/* FOOTER SECTION */}
       <footer className='footer-main'>
         <div className='footer-left'>
