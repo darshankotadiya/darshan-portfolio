@@ -998,4 +998,56 @@ function App() {
   );
 }
 
+
+// આ બ્લોકને તારા જૂના કોન્ટેક્ટ સેક્શનની જગ્યાએ રિપ્લેસ કરો અથવા છેલ્લે અપડેટ કરો
+const FinalContactSection = () => {
+  return (
+    <section id='contact' className="live-constellation-section">
+      {/* તારા મંડળ ઇફેક્ટ માટે ઓવરલે */}
+      <div className="live-stars-layer"></div>
+      
+      <div className="contact-main-wrap">
+        <h2 className='section-head'>Get In <span>Touch</span></h2>
+        
+        <div className='contact-balanced-grid'>
+          {/* ડાબી બાજુથી શરૂ થતું લખાણ */}
+          <div className="contact-left-content">
+            <h3 style={{ fontSize: '28px', color: 'white' }}>Let's Connect</h3>
+            <p style={{ color: '#94a3b8', margin: '20px 0' }}>Available for freelance and full-time roles.</p>
+            
+            <div className='contact-info-cards-stack'>
+              <div className='final-info-card'>
+                <div className='icon-circle-purple'><Mail size={24} /></div>
+                <div><p className='label'>Email</p><p className='value'>darshankotadiya1010@gmail.com</p></div>
+              </div>
+              <div className='final-info-card'>
+                <div className='icon-circle-purple'><MessageSquare size={24} /></div>
+                <div><p className='label'>WhatsApp</p><p className='value'>+91 96243 32477</p></div>
+              </div>
+            </div>
+
+            <div style={{ marginTop: '40px' }}>
+              <p style={{ color: '#f0f6fc', marginBottom: '15px', fontWeight: '600' }}>Follow Me</p>
+              <div className="social-row-left-align">
+                <a href='https://github.com/darshankotadiya' className='social-dot'><Github size={20} /></a>
+                <a href='https://www.linkedin.com/in/darshan-kotadiya-70416a251/' className='social-dot'><Linkedin size={20} /></a>
+              </div>
+            </div>
+          </div>
+
+          {/* જમણી બાજુનું ફોર્મ */}
+          <form className='final-form-box' onSubmit={handleSubmit}>
+            <div className="form-flex-row">
+              <input className='final-input' name='name' placeholder='Name' required />
+              <input className='final-input' name='email' type='email' placeholder='Email' required />
+            </div>
+            <input className='final-input' name='subject' placeholder='Subject' required />
+            <textarea className='final-input' name='message' rows='4' placeholder='Message' required></textarea>
+            <button type='submit' className='final-send-btn'><Send size={18} /> Send Email</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+};
 export default App;
