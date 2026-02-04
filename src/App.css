@@ -936,3 +936,49 @@ html {
   }
 }
 
+
+/* ૧. લાઈવ એનિમેશન (તારા મંડળ ઇફેક્ટ) */
+.constellation-bg {
+  position: relative;
+  background: #0a0a0c;
+  overflow: hidden;
+  padding: 100px 8%;
+}
+
+.stars-animation {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveStars 10s linear infinite; /* લાઈવ મુવમેન્ટ */
+  z-index: 1;
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 40px 40px; }
+}
+
+/* ૨. મોબાઈલ લેફ્ટ એલાઈનમેન્ટ (Proper Start) */
+@media (max-width: 768px) {
+  .contact-inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important; /* ડાબી બાજુથી શરૂ થશે */
+    text-align: left !important;
+    position: relative;
+    z-index: 2;
+  }
+
+  .contact-info-card {
+    justify-content: flex-start !important;
+    padding: 15px 0 !important;
+    gap: 15px !important; /* આઇકન-ટેક્સ્ટ વચ્ચે ઓછી સ્પેસ */
+  }
+
+  /* આઇકન્સને ડાબી બાજુ કરવા */
+  .social-icon-row {
+    justify-content: flex-start !important;
+    margin: 0 !important;
+  }
+}
