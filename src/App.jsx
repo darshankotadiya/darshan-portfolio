@@ -828,18 +828,15 @@ function App() {
               <p className='label'>Phone</p>
               <a href='tel:+919624332477' className='value'>+91 96243 32477</a>
             </div>
+            {/* WHATSAPP CARD - નવું એડ કર્યું */}
+          <div className='contact-info-card'>
+            <div className='icon-box-purple'><MessageSquare size={24} color='white' /></div>
             <div>
-                  <p className='label'>WhatsApp</p>
-                  <a
-                    href='https://wa.me/919624332477'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='value'
-                    style={{ textDecoration: 'none', display: 'block' }}
-                  >
-                    +91 96243 32477
-                  </a>
-                </div>
+              <p className='label'>WhatsApp</p>
+              <a href='https://wa.me/919624332477' target='_blank' rel='noopener noreferrer' className='value'>+91 96243 32477</a>
+            </div>
+          </div>
+        </div>
           </div>
         </div>
 
